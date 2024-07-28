@@ -201,23 +201,25 @@ document.addEventListener("DOMContentLoaded", () => {
 
   //Modal Function
   // fungsi membuka modal detail tagihan
-  function openModalBox(event, target) {
-    const boxModal = event.querySelectorAll(".data-siswa");
-    boxModal.forEach((item) => {
-      item.addEventListener("click", () => {
-        modal.classList.add("active");
-        target.classList.remove("non");
-        setTimeout(() => {
-          target.classList.add("active");
-        }, 50);
-        document.body.classList.add("modal-open");
-      });
+  function openModalBox(triggerElement, modalElement) {
+    // Tambahkan event listener untuk klik pada elemen trigger (misalnya, searchSpp)
+    triggerElement.addEventListener("click", (event) => {
+        // Cek apakah elemen yang diklik adalah .data-siswa
+        if (event.target.closest(".data-siswa")) {
+            // Buka modal
+            modalElement.classList.add("active");
+            triggerElement.classList.remove("non");
+            setTimeout(() => {
+                triggerElement.classList.add("active");
+            }, 50);
+            document.body.classList.add("modal-open");
+        }
     });
-  }
-  openModalBox(searchBuku, modalBuku);
+}
   openModalBox(searchSpp, modalSpp);
-  openModalBox(searchBaju, modalBaju);
-  openModalBox(searchKegiatan, modalKegiatan);
+openModalBox(searchBuku, modalBuku);
+openModalBox(searchBaju, modalBaju);
+openModalBox(searchKegiatan, modalKegiatan);
 
   function tutupModals() {
     modal.classList.remove("active");
