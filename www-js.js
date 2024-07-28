@@ -202,20 +202,31 @@ document.addEventListener("DOMContentLoaded", () => {
   //Modal Function
   // fungsi membuka modal detail tagihan
   function openModalBox(triggerElement, modalElement) {
-    // Tambahkan event listener untuk klik pada elemen trigger (misalnya, searchSpp)
+    // Tambahkan event listener untuk klik pada elemen trigger
     triggerElement.addEventListener("click", (event) => {
-        // Cek apakah elemen yang diklik adalah .data-siswa
         if (event.target.closest(".data-siswa")) {
-            // Buka modal
+            console.log("Klik pada .data-siswa terdeteksi.");
+
+            // Tampilkan modal dasar
             modal.classList.add("active");
+            console.log("Modal dasar diaktifkan.");
+
+            // Pastikan modalElement tidak memiliki kelas 'non'
             modalElement.classList.remove("non");
+            console.log("Kelas 'non' dihapus dari modalElement.");
+
+            // Tambahkan kelas 'active' ke modalElement
             setTimeout(() => {
                 modalElement.classList.add("active");
+                console.log("Kelas 'active' ditambahkan ke modalElement.");
             }, 50);
+
+            // Tambahkan kelas pada body
             document.body.classList.add("modal-open");
+            console.log("Kelas 'modal-open' ditambahkan ke body.");
         }
     });
-}  
+}
   openModalBox(searchSpp, modalSpp);
 openModalBox(searchBuku, modalBuku);
 openModalBox(searchBaju, modalBaju);
