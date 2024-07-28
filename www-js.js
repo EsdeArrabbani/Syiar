@@ -199,26 +199,26 @@ document.addEventListener("DOMContentLoaded", () => {
   fabModal(btn_bayarKegiatan, bayarKegiatan);
   fabModal(btnHistory, modalSide);
 
-  //Modal Function
-  // fungsi membuka modal detail tagihan
-  function openModalBox(triggerElement, modalElement) {
-    // Tambahkan event listener untuk klik pada elemen trigger
-    triggerElement.addEventListener("click", (event) => {
-        if (event.target.closest(".data-siswa")) {
-            console.log("Klik pada .data-siswa terdeteksi.");
-            modal.classList.add("active");
-            modalElement.classList.remove("non");
-            setTimeout(() => {
-                modalElement.classList.add("active");
-            }, 50);
-            document.body.classList.add("modal-open");
-        }
-    });
-}
-  openModalBox(searchSpp, modalSpp);
-openModalBox(searchBuku, modalBuku);
-openModalBox(searchBaju, modalBaju);
-openModalBox(searchKegiatan, modalKegiatan);
+//   //Modal Function
+//   // fungsi membuka modal detail tagihan
+//   function openModalBox(triggerElement, modalElement) {
+//     // Tambahkan event listener untuk klik pada elemen trigger
+//     triggerElement.addEventListener("click", (event) => {
+//         if (event.target.closest(".data-siswa")) {
+//             console.log("Klik pada .data-siswa terdeteksi.");
+//             modal.classList.add("active");
+//             modalElement.classList.remove("non");
+//             setTimeout(() => {
+//                 modalElement.classList.add("active");
+//             }, 50);
+//             document.body.classList.add("modal-open");
+//         }
+//     });
+// }
+//   openModalBox(searchSpp, modalSpp);
+// openModalBox(searchBuku, modalBuku);
+// openModalBox(searchBaju, modalBaju);
+// openModalBox(searchKegiatan, modalKegiatan);
 
   function tutupModals() {
     modal.classList.remove("active");
