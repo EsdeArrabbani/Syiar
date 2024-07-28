@@ -207,15 +207,15 @@ document.addEventListener("DOMContentLoaded", () => {
         // Cek apakah elemen yang diklik adalah .data-siswa
         if (event.target.closest(".data-siswa")) {
             // Buka modal
-            modalElement.classList.add("active");
-            triggerElement.classList.remove("non");
+            modal.classList.add("active");
+            modalElement.classList.remove("non");
             setTimeout(() => {
-                triggerElement.classList.add("active");
+                modalElement.classList.add("active");
             }, 50);
             document.body.classList.add("modal-open");
         }
     });
-}
+}  
   openModalBox(searchSpp, modalSpp);
 openModalBox(searchBuku, modalBuku);
 openModalBox(searchBaju, modalBaju);
