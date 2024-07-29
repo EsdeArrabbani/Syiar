@@ -405,29 +405,6 @@ document.addEventListener("DOMContentLoaded", () => {
   filterItems(namaSiswaKegiatan, namaDataSiswa[5]);
   filterItems(dropSelectKegiatan, namaDropSiswaKegiatan);
 
-  // Fungsi mengeklik nama dan memindahkannya pada dropdown ke input (semuanya)
-  function inputNama(event, target) {
-    target.forEach((e) => {
-        e.addEventListener("click", function handleClick() {
-            event.value = e.textContent;
-            if (widthVW < 1024) {
-                const formModal = e.closest(".form");
-                const modalCard = formModal.closest(".modal-card.active");
-                if (formModal && modalCard) {
-                    modalCard.style.transform = "translateY(35vh)";
-                    formModal.style.transform = "translateX(-1rem)";
-                    e.closest(".drop-select").classList.remove("active");
-                    modal.style.overflow = "";
-                }
-            } else {
-                e.closest(".drop-select").classList.remove("active");
-                modal.style.overflow = "";
-            }
-            sendValue();
-        });
-    });
-}
-
   // Fungsi tutup dropdown (semuanya)
 
   tutupDropSelect.forEach((e) => {
@@ -543,46 +520,15 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   // fungsi mengambil bulanSPP, namaSiswaSPP, Nominal (semuanya), Tanggal (semuanya)
-  function valueBulanSPP() {
-    return inputBulanSPP.value;
-  }
-  function valueNamaSiswa() {
-    return namaSiswaSpp.value;
-  }
-  function valueNominalSPP() {
-    let values = [];
-    currencyInputs.forEach((e) => {
-      var input_val = e.value;
-      var cleaned_value = input_val.replace(/[^\d.]/g, "");
-      // Hapus tanda titik dari depan angka jika ada
-      cleaned_value = cleaned_value.replace(/^\.+/g, "");
-      values.push(cleaned_value);
-    });
-    return values.join(",");
-  }
+  
 
-  function valueTanggalSPP() {
-    let values = [];
-    inputDates.forEach((e) => {
-      let pemisahTanggal = e.value.split("-");
-      if (pemisahTanggal.length === 3) {
-        let pembagianTanggal =
-          pemisahTanggal[2] + "/" + pemisahTanggal[1] + "/" + pemisahTanggal[0];
-        values.push(pembagianTanggal);
-      } else {
-        values.push(e.value);
-      }
-    });
-    return values.join(",");
-  }
-
-  // fungsi mengirim data
-  function sendValue() {
-    console.log("Pembayaran Bulan :" + valueBulanSPP());
-    console.log("Nama Siswa :" + valueNamaSiswa());
-    console.log("Nominal :" + valueNominalSPP());
-    console.log("Tanggal :" + valueTanggalSPP());
-  }
+  // // fungsi mengirim data
+  // function sendValue() {
+  //   console.log("Pembayaran Bulan :" + valueBulanSPP());
+  //   console.log("Nama Siswa :" + valueNamaSiswa());
+  //   console.log("Nominal :" + valueNominalSPP());
+  //   console.log("Tanggal :" + valueTanggalSPP());
+  // }
 
   //Alert Function
   const customAlert = document.getElementById("customAlert");
