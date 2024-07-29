@@ -75,6 +75,18 @@ const month = String(today.getMonth() + 1).padStart(2, "0"); // Ingat bahwa bula
 const day = String(today.getDate()).padStart(2, "0"); // PadStart untuk menambahkan '0' jika hanya satu digit
 const formattedDate = `${year}-${month}-${day}`;
 
+ //Splash Screen
+  function splashOn() {
+    const splashScreen = document.querySelector(".splash-screen");
+    setTimeout(() => {
+      splashScreen.classList.add("remove");
+      setTimeout(() => {
+        splashScreen.style.display = "none";
+      }, 1000);
+    }, 2000);
+  }
+  splashOn();
+
 document.addEventListener("DOMContentLoaded", () => {
   //Navbar
   // Tambahkan event listener untuk setiap nav-base
@@ -137,18 +149,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  //Splash Screen
-  function splashOn() {
-    const splashScreen = document.querySelector(".splash-screen");
-    setTimeout(() => {
-      splashScreen.classList.add("remove");
-      setTimeout(() => {
-        splashScreen.style.display = "none";
-      }, 1000);
-    }, 2000);
-  }
-  splashOn();
-
   //Main
   // fungsi mencari nama siswa di dalam page
   function SearchItems(event, start) {
@@ -198,28 +198,7 @@ document.addEventListener("DOMContentLoaded", () => {
   fabModal(btn_tambahBaju, TambahBaju);
   fabModal(btn_bayarKegiatan, bayarKegiatan);
   fabModal(btnHistory, modalSide);
-
-//   //Modal Function
-//   // fungsi membuka modal detail tagihan
-//   function openModalBox(triggerElement, modalElement) {
-//     // Tambahkan event listener untuk klik pada elemen trigger
-//     triggerElement.addEventListener("click", (event) => {
-//         if (event.target.closest(".data-siswa")) {
-//             console.log("Klik pada .data-siswa terdeteksi.");
-//             modal.classList.add("active");
-//             modalElement.classList.remove("non");
-//             setTimeout(() => {
-//                 modalElement.classList.add("active");
-//             }, 50);
-//             document.body.classList.add("modal-open");
-//         }
-//     });
-// }
-//   openModalBox(searchSpp, modalSpp);
-// openModalBox(searchBuku, modalBuku);
-// openModalBox(searchBaju, modalBaju);
-// openModalBox(searchKegiatan, modalKegiatan);
-
+  
   function tutupModals() {
     modal.classList.remove("active");
     modalSpp.classList.remove("active");
@@ -429,31 +408,25 @@ document.addEventListener("DOMContentLoaded", () => {
   // Fungsi mengeklik nama dan memindahkannya pada dropdown ke input (semuanya)
   function inputNama(event, target) {
     target.forEach((e) => {
-      e.addEventListener("click", () => {
-        event.value = e.textContent;
-        if (widthVW < 1024) {
-          const formModal = e.closest(".form");
-          const modalCard = formModal.closest(".modal-card.active");
-          if (formModal && modalCard) {
-            modalCard.style.transform = "translateY(35vh)";
-            formModal.style.transform = "translateX(-1rem)";
-            e.closest(".drop-select").classList.remove("active");
-            modal.style.overflow = "";
-          }
-        } else {
-          e.closest(".drop-select").classList.remove("active");
-          modal.style.overflow = "";
-        }
-        sendValue();
-      });
+        e.addEventListener("click", function handleClick() {
+            event.value = e.textContent;
+            if (widthVW < 1024) {
+                const formModal = e.closest(".form");
+                const modalCard = formModal.closest(".modal-card.active");
+                if (formModal && modalCard) {
+                    modalCard.style.transform = "translateY(35vh)";
+                    formModal.style.transform = "translateX(-1rem)";
+                    e.closest(".drop-select").classList.remove("active");
+                    modal.style.overflow = "";
+                }
+            } else {
+                e.closest(".drop-select").classList.remove("active");
+                modal.style.overflow = "";
+            }
+            sendValue();
+        });
     });
-  }
-  inputNama(namaSiswaSpp, listNamaSiswa);
-  inputNama(namaSiswaBuku, listNamaSiswa);
-  inputNama(namaPesanBuku, listNamaSiswa);
-  inputNama(namaSiswaBaju, listNamaSiswa);
-  inputNama(namaPesanBaju, listNamaSiswa);
-  inputNama(namaSiswaKegiatan, listNamaSiswa);
+}
 
   // Fungsi tutup dropdown (semuanya)
 
