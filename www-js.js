@@ -406,27 +406,27 @@ document.addEventListener("DOMContentLoaded", () => {
   filterItems(dropSelectKegiatan, namaDropSiswaKegiatan);
 
   // Fungsi mengeklik nama dan memindahkannya pada dropdown ke input (semuanya)
-//   function inputNama(event, target) {
-//     target.forEach((e) => {
-//         e.addEventListener("click", function handleClick() {
-//             event.value = e.textContent;
-//             if (widthVW < 1024) {
-//                 const formModal = e.closest(".form");
-//                 const modalCard = formModal.closest(".modal-card.active");
-//                 if (formModal && modalCard) {
-//                     modalCard.style.transform = "translateY(35vh)";
-//                     formModal.style.transform = "translateX(-1rem)";
-//                     e.closest(".drop-select").classList.remove("active");
-//                     modal.style.overflow = "";
-//                 }
-//             } else {
-//                 e.closest(".drop-select").classList.remove("active");
-//                 modal.style.overflow = "";
-//             }
-//             sendValue();
-//         });
-//     });
-// }
+  function inputNama(event, target) {
+    target.forEach((e) => {
+        e.addEventListener("click", function handleClick() {
+            event.value = e.textContent;
+            if (widthVW < 1024) {
+                const formModal = e.closest(".form");
+                const modalCard = formModal.closest(".modal-card.active");
+                if (formModal && modalCard) {
+                    modalCard.style.transform = "translateY(35vh)";
+                    formModal.style.transform = "translateX(-1rem)";
+                    e.closest(".drop-select").classList.remove("active");
+                    modal.style.overflow = "";
+                }
+            } else {
+                e.closest(".drop-select").classList.remove("active");
+                modal.style.overflow = "";
+            }
+            sendValue();
+        });
+    });
+}
 
   // Fungsi tutup dropdown (semuanya)
 
