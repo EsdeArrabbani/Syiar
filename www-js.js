@@ -48,7 +48,6 @@ const dropSelectKegiatan = document.getElementById("cari-drop-select-kegiatan");
 const dropPesanBuku = document.getElementById("cari-drop-pesan-buku");
 const dropPesanBaju = document.getElementById("cari-drop-pesan-baju");
 const allDropSelect = document.querySelectorAll(".drop-select");
-const inputBulanSPP = document.getElementById("bulan-spp");
 const listNamaSiswa = document.querySelectorAll(".drop-select p");
 const allInputs = document.querySelectorAll('input:not([type="date"])');
 const sppCheckBox = document.querySelectorAll(
