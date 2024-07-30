@@ -57,7 +57,6 @@ const currencyInputs = document.querySelectorAll("input[data-type='currency']");
 const selectiveInput = document.querySelectorAll(
   "input[data-type='selective']"
 );
-const tglAll = document.querySelectorAll("input[name='tanggal']");
 const widthVW = window.innerWidth;
 const noResultsMessage = document.createElement("p");
 const namaDropSiswaSPP = dropSelectSPP.closest(".drop-select");
@@ -87,9 +86,6 @@ const formattedDate = `${year}-${month}-${day}`;
   splashOn();
 
 document.addEventListener("DOMContentLoaded", () => {
-  tglAll.forEach((e)=>{
-    e.value = formattedDate;
-  });
   //Navbar
   // Tambahkan event listener untuk setiap nav-base
   navBases.forEach(function (navBase) {
