@@ -487,7 +487,6 @@ document.addEventListener("DOMContentLoaded", () => {
     cleaned_value = cleaned_value.replace(/^\.+/g, "");
     input.value =
       cleaned_value !== "" ? "Rp. " + formatNumber(cleaned_value) : "";
-    sendValue();
   }
 
   // fungsi mengambil data tanggal hari ini
@@ -504,25 +503,13 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
     inputBulanSPP.value = selectedData.join(",");
-    sendValue();
   }
 
   // fungsi checkbox untuk pemilihan data Bulan SPP
   sppCheckBox.forEach((checkbox) => {
     checkbox.addEventListener("change", updateBulanSPP);
   });
-
-  // fungsi mengambil bulanSPP, namaSiswaSPP, Nominal (semuanya), Tanggal (semuanya)
   
-
-  // // fungsi mengirim data
-  // function sendValue() {
-  //   console.log("Pembayaran Bulan :" + valueBulanSPP());
-  //   console.log("Nama Siswa :" + valueNamaSiswa());
-  //   console.log("Nominal :" + valueNominalSPP());
-  //   console.log("Tanggal :" + valueTanggalSPP());
-  // }
-
   //Alert Function
   const customAlert = document.getElementById("customAlert");
 
