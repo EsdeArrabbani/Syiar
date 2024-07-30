@@ -49,7 +49,7 @@ const dropPesanBuku = document.getElementById("cari-drop-pesan-buku");
 const dropPesanBaju = document.getElementById("cari-drop-pesan-baju");
 const allDropSelect = document.querySelectorAll(".drop-select");
 const listNamaSiswa = document.querySelectorAll(".drop-select p");
-const allInputs = document.querySelectorAll('input:not([type="date"])');
+const allInputs = document.querySelectorAll('input:not([name="tanggal"])');
 const sppCheckBox = document.querySelectorAll(
   "#chip-spp input[type='checkbox']"
 );
@@ -486,27 +486,6 @@ document.addEventListener("DOMContentLoaded", () => {
     input.value =
       cleaned_value !== "" ? "Rp. " + formatNumber(cleaned_value) : "";
   }
-
-  // fungsi mengambil data tanggal hari ini
-
-
-  // fungsi Update pemilihan data Bulan SPP
-  function updateBulanSPP() {
-    var selectedData = [];
-
-    sppCheckBox.forEach((cb) => {
-      if (cb.checked) {
-        var label = cb.nextElementSibling.textContent;
-        selectedData.push(label);
-      }
-    });
-    inputBulanSPP.value = selectedData.join(",");
-  }
-
-  // fungsi checkbox untuk pemilihan data Bulan SPP
-  sppCheckBox.forEach((checkbox) => {
-    checkbox.addEventListener("change", updateBulanSPP);
-  });
   
   //Alert Function
   const customAlert = document.getElementById("customAlert");
