@@ -58,7 +58,7 @@ const currencyInputs = document.querySelectorAll("input[data-type='currency']");
 const selectiveInput = document.querySelectorAll(
   "input[data-type='selective']"
 );
-const inputDates = document.querySelectorAll(".tanggal");
+const inputDates = document.querySelectorAll("#tanggal-spp");
 const widthVW = window.innerWidth;
 const noResultsMessage = document.createElement("p");
 const namaDropSiswaSPP = dropSelectSPP.closest(".drop-select");
