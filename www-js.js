@@ -222,7 +222,7 @@ document.addEventListener("DOMContentLoaded", () => {
     modalSide.classList.add("non");
     allDropSelect.forEach((e) => e.classList.remove("active"));
     document.body.classList.remove("modal-open");
-    allInputs.forEach((el) => {
+    AllInputs.forEach((el) => {
       el.checked = false;
       el.value = "";
     });
