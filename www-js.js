@@ -49,8 +49,6 @@ const dropPesanBuku = document.getElementById("cari-drop-pesan-buku");
 const dropPesanBaju = document.getElementById("cari-drop-pesan-baju");
 const allDropSelect = document.querySelectorAll(".drop-select");
 const listNamaSiswa = document.querySelectorAll(".drop-select p");
-const allInputs = document.querySelectorAll('input:not(.tanggal)');
-
 const sppCheckBox = document.querySelectorAll(
   "#chip-spp input[type='checkbox']"
 );
