@@ -492,13 +492,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // fungsi mengambil data tanggal hari ini
 
-  inputDates.forEach((inputDate) => {
-    inputDate.value = formattedDate;
-    inputDate.addEventListener("change", (e) => {
-      inputDate.blur();
-      sendValue();
-    });
-  });
 
   // fungsi Update pemilihan data Bulan SPP
   function updateBulanSPP() {
