@@ -281,69 +281,69 @@ document.addEventListener("DOMContentLoaded", () => {
       modalSide.classList.add("active");
     }, 50);
   });
-  riwayatHeader.forEach((e) => {
-    e.addEventListener("click", () => {
-      const isActive = e.classList.contains("active");
-      document.querySelectorAll(".topic-history").forEach((otherItem) => {
-        otherItem.classList.remove("active");
-        otherItem.nextElementSibling.classList.remove("active");
-      });
-      const content = e.nextElementSibling;
-      if (!isActive) {
-        e.classList.toggle("active");
-        content.classList.toggle("active");
-      }
-    });
-  });
+  // riwayatHeader.forEach((e) => {
+  //   e.addEventListener("click", () => {
+  //     const isActive = e.classList.contains("active");
+  //     document.querySelectorAll(".topic-history").forEach((otherItem) => {
+  //       otherItem.classList.remove("active");
+  //       otherItem.nextElementSibling.classList.remove("active");
+  //     });
+  //     const content = e.nextElementSibling;
+  //     if (!isActive) {
+  //       e.classList.toggle("active");
+  //       content.classList.toggle("active");
+  //     }
+  //   });
+  // });
 
-  //Dropdown Function
-  // fungsi mengeklik pagination pada topic
-  function paginationTopic(element) {
-    const topicPage = document.querySelectorAll(`.topic-page.${element}`);
-    topicPage.forEach((tp) => {
-      tp.addEventListener("click", () => {
-        const tpItem = tp.classList.contains(element);
-        topicPage.forEach((item) => {
-          if (item.classList.contains(element)) {
-            item.classList.remove("active");
-            console.log(item);
-          }
-        });
-        if (tpItem) {
-          tp.classList.add("active");
-        }
-        showContentPagination(tp.id, element);
+  // //Dropdown Function
+  // // fungsi mengeklik pagination pada topic
+  // function paginationTopic(element) {
+  //   const topicPage = document.querySelectorAll(`.topic-page.${element}`);
+  //   topicPage.forEach((tp) => {
+  //     tp.addEventListener("click", () => {
+  //       const tpItem = tp.classList.contains(element);
+  //       topicPage.forEach((item) => {
+  //         if (item.classList.contains(element)) {
+  //           item.classList.remove("active");
+  //           console.log(item);
+  //         }
+  //       });
+  //       if (tpItem) {
+  //         tp.classList.add("active");
+  //       }
+  //       showContentPagination(tp.id, element);
 
-        window.scrollTo({
-          top: 0,
-          behavior: "instant",
-        });
-      });
-    });
-  }
+  //       window.scrollTo({
+  //         top: 0,
+  //         behavior: "instant",
+  //       });
+  //     });
+  //   });
+  // }
 
-  // Fungsi untuk menampilkan konten yang sesuai dengan id
-  function showContentPagination(id, el) {
-    const allContentPages = document.querySelectorAll(
-      ".topic-content > .data-content"
-    );
+  // // Fungsi untuk menampilkan konten yang sesuai dengan id
+  // function showContentPagination(id, el) {
+  //   const allContentPages = document.querySelectorAll(
+  //     ".topic-content > .data-content"
+  //   );
 
-    allContentPages.forEach((content) => {
-      if (content.classList.contains(el)) {
-        content.style.display = "none";
-      }
-    });
-    const contentPageElement = document.getElementById("content-" + id);
-    if (contentPageElement) {
-      contentPageElement.style.display = "block";
-    }
-  }
+  //   allContentPages.forEach((content) => {
+  //     if (content.classList.contains(el)) {
+  //       content.style.display = "none";
+  //     }
+  //   });
+  //   const contentPageElement = document.getElementById("content-" + id);
+  //   if (contentPageElement) {
+  //     contentPageElement.style.display = "block";
+  //   }
+  // }
 
-  // Panggil fungsi untuk 'spp' dan 'keg'
-  paginationTopic("spp");
-  paginationTopic("keg");
-  paginationTopic("buku");
-  paginationTopic("baju");
+  // // Panggil fungsi untuk 'spp' dan 'keg'
+  // paginationTopic("spp");
+  // paginationTopic("keg");
+  // paginationTopic("buku");
+  // paginationTopic("baju");
 
   //Formulir Function
 
