@@ -281,20 +281,20 @@ document.addEventListener("DOMContentLoaded", () => {
       modalSide.classList.add("active");
     }, 50);
   });
-  // riwayatHeader.forEach((e) => {
-  //   e.addEventListener("click", () => {
-  //     const isActive = e.classList.contains("active");
-  //     document.querySelectorAll(".topic-history").forEach((otherItem) => {
-  //       otherItem.classList.remove("active");
-  //       otherItem.nextElementSibling.classList.remove("active");
-  //     });
-  //     const content = e.nextElementSibling;
-  //     if (!isActive) {
-  //       e.classList.toggle("active");
-  //       content.classList.toggle("active");
-  //     }
-  //   });
-  // });
+  riwayatHeader.forEach((e) => {
+    e.addEventListener("click", () => {
+      const isActive = e.classList.contains("active");
+      document.querySelectorAll(".topic-history").forEach((otherItem) => {
+        otherItem.classList.remove("active");
+        otherItem.nextElementSibling.classList.remove("active");
+      });
+      const content = e.nextElementSibling;
+      if (!isActive) {
+        e.classList.toggle("active");
+        content.classList.toggle("active");
+      }
+    });
+  });
 
   //Dropdown Function
   // fungsi mengeklik pagination pada topic
