@@ -44,7 +44,6 @@ const dropSelectKegiatan = document.getElementById("cari-drop-select-kegiatan");
 const dropPesanBuku = document.getElementById("cari-drop-pesan-buku");
 const dropPesanBaju = document.getElementById("cari-drop-pesan-baju");
 const allDropSelect = document.querySelectorAll(".drop-select");
-const inputBulanSPP = document.getElementById("bulan-spp");
 const namaSiswaSpp = document.getElementById("nama-siswa-spp");
 const namaSiswaBuku = document.getElementById("nama-siswa-buku");
 const namaSiswaBaju = document.getElementById("nama-siswa-baju");
@@ -54,7 +53,6 @@ const allInputs = document.querySelectorAll('input:not([type="date"])');
 const sppCheckBox = document.querySelectorAll(
   "#chip-spp input[type='checkbox']"
 );
-const currencyInputs = document.querySelectorAll("input[data-type='currency']");
 const selectiveInput = document.querySelectorAll(
   "input[data-type='selective']"
 );
