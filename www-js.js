@@ -1,3 +1,4 @@
+// Deklarasi semua elemen
 const navBases = document.querySelectorAll(".nav-base");
 const btn_bayarSPP = document.querySelector("#btn-bayar-spp");
 const btn_bayarBuku = document.querySelector("#btn-bayar-buku");
@@ -76,9 +77,7 @@ const day = String(today.getDate()).padStart(2, "0"); // PadStart untuk menambah
 const formattedDate = `${year}-${month}-${day}`;
 
 document.addEventListener("DOMContentLoaded", () => {
-  
-  //Main
-  // fungsi mencari nama siswa di dalam page
+  // Fungsi mencari nama siswa di dalam page
   function SearchItems(event, start) {
     event.addEventListener("input", function () {
       start.appendChild(noResultsMessage);
@@ -102,10 +101,13 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   }
+
+  // Pastikan variabel dideklarasikan sebelum digunakan
   SearchItems(pencarianSpp, searchSpp);
   SearchItems(pencarianBuku, searchBuku);
   SearchItems(pencarianBaju, searchBaju);
   SearchItems(pencarianKegiatan, searchKegiatan);
+});
 
   //Fab Button
   function fabModal(event, target) {
