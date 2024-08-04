@@ -49,7 +49,7 @@ const namaSiswaBuku = document.getElementById("nama-siswa-buku");
 const namaSiswaBaju = document.getElementById("nama-siswa-baju");
 const namaSiswaKegiatan = document.getElementById("nama-siswa-kegiatan");
 const listNamaSiswa = document.querySelectorAll(".drop-select p");
-const allInputs = document.querySelectorAll('input:not([type="date"])');
+const allInputs = document.querySelectorAll("input:not(.tanggal)");
 const sppCheckBox = document.querySelectorAll(
   "#chip-spp input[type='checkbox']"
 );
@@ -73,13 +73,6 @@ const month = String(today.getMonth() + 1).padStart(2, "0"); // Ingat bahwa bula
 const day = String(today.getDate()).padStart(2, "0"); // PadStart untuk menambahkan '0' jika hanya satu digit
 const formattedDate = `${year}-${month}-${day}`;
  const allContents = document.querySelectorAll(".main-page > div");
- allContents.forEach((e)=>{
-  if (e.id === "konten-spp") {
-  e.style.display = "block";
-  } else {
-  e.style.display = "none";
-  }
- });
 document.addEventListener("DOMContentLoaded", () => {
   //Navbar
   // Tambahkan event listener untuk setiap nav-base
@@ -404,7 +397,6 @@ function showContent(id) {
           e.closest(".drop-select").classList.remove("active");
           modal.style.overflow = "";
         }
-        sendValue();
       });
     });
   }
