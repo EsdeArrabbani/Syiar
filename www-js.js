@@ -1,4 +1,4 @@
-// Deklarasi semua elemen
+document.addEventListener("DOMContentLoaded", () => {
 const navBases = document.querySelectorAll(".nav-base");
 const btn_bayarSPP = document.querySelector("#btn-bayar-spp");
 const btn_bayarBuku = document.querySelector("#btn-bayar-buku");
@@ -76,7 +76,6 @@ const month = String(today.getMonth() + 1).padStart(2, "0"); // Ingat bahwa bula
 const day = String(today.getDate()).padStart(2, "0"); // PadStart untuk menambahkan '0' jika hanya satu digit
 const formattedDate = `${year}-${month}-${day}`;
 
-document.addEventListener("DOMContentLoaded", () => {
   // Fungsi mencari nama siswa di dalam page
   function SearchItems(event, start) {
     event.addEventListener("input", function () {
