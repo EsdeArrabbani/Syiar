@@ -52,7 +52,6 @@ const listNamaSiswa = document.querySelectorAll(".drop-select p");
 const sppCheckBox = document.querySelectorAll(
   "#chip-spp input[type='checkbox']"
 );
-const currencyInputs = document.querySelectorAll("input[data-type='currency']");
 const selectiveInput = document.querySelectorAll(
   "input[data-type='selective']"
 );
@@ -461,30 +460,6 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     }
   });
-
-  // fungsi mengubah format mata uang ke Rp.
-  currencyInputs.forEach(function (input) {
-    input.addEventListener("input", function () {
-      formatCurrency(this);
-    });
-    input.addEventListener("mousedown", function () {
-      input.select();
-    });
-  });
-
-  // fungsi menformat angka sebelum diubah ke Rp.
-  function formatNumber(n) {
-    return n.replace(/\D/g, "").replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-  }
-
-  // fungsi menghilangkan tanda titik dan menambahkan Rp. pada angka di input
-  function formatCurrency(input) {
-    var input_val = input.value;
-    var cleaned_value = input_val.replace(/[^\d.]/g, "");
-    cleaned_value = cleaned_value.replace(/^\.+/g, "");
-    input.value =
-      cleaned_value !== "" ? "Rp. " + formatNumber(cleaned_value) : "";
-  }
   
   //Alert Function
   const customAlert = document.getElementById("customAlert");
