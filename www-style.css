@@ -1,533 +1,1651 @@
-const navBases = document.querySelectorAll(".nav-base");
-const btn_bayarSPP = document.querySelector("#btn-bayar-spp");
-const btn_bayarBuku = document.querySelector("#btn-bayar-buku");
-const btn_tambahBuku = document.querySelector("#btn-tambah-buku");
-const btn_bayarBaju = document.querySelector("#btn-bayar-baju");
-const btn_tambahBaju = document.querySelector("#btn-tambah-baju");
-const btn_bayarKegiatan = document.querySelector("#btn-bayar-kegiatan");
-const modal = document.getElementById("modal");
-const modalSpp = document.getElementById("modal-spp");
-const modalBuku = document.getElementById("modal-buku");
-const modalBaju = document.getElementById("modal-baju");
-const modalKegiatan = document.getElementById("modal-kegiatan");
-const bayarSpp = document.getElementById("modal-spp-plus");
-const bayarBuku = document.getElementById("modal-buku-plus");
-const bayarBaju = document.getElementById("modal-baju-plus");
-const bayarKegiatan = document.getElementById("modal-kegiatan-plus");
-const TambahBuku = document.getElementById("modal-buku-edit");
-const TambahBaju = document.getElementById("modal-baju-edit");
-const topBar = document.querySelector(".top-bar");
-const closeModalButtons = modal.querySelectorAll(".close-modal");
-const pencarianSpp = document.getElementById("search-spp");
-const pencarianBuku = document.getElementById("search-buku");
-const pencarianBaju = document.getElementById("search-baju");
-const pencarianKegiatan = document.getElementById("search-kegiatan");
-const searchSpp = document.getElementById("pencarian-spp");
-const searchBuku = document.getElementById("pencarian-buku");
-const searchBaju = document.getElementById("pencarian-baju");
-const searchKegiatan = document.getElementById("pencarian-kegiatan");
-const menu = document.getElementById("menu-bar");
-const nav = document.querySelector(".navbar");
-const main = document.querySelector(".main");
-const card_modals = document.querySelectorAll(".modal-card");
-const btnHistory = document.querySelector(".btn-history");
-const modalSide = document.getElementById("modal-history");
-const riwayatHeader = document.querySelectorAll(".topic-history");
-const buttonAll = document.querySelectorAll(".btn.full");
-const card_el = document.querySelectorAll(".modal-card");
-const namaPesanBuku = document.getElementById("nama-pesan-buku");
-const namaPesanBaju = document.getElementById("nama-pesan-baju");
-const dropSelectSPP = document.getElementById("cari-drop-select-spp");
-const dropSelectBuku = document.getElementById("cari-drop-select-buku");
-const dropSelectBaju = document.getElementById("cari-drop-select-baju");
-const dropSelectKegiatan = document.getElementById("cari-drop-select-kegiatan");
-const dropPesanBuku = document.getElementById("cari-drop-pesan-buku");
-const dropPesanBaju = document.getElementById("cari-drop-pesan-baju");
-const allDropSelect = document.querySelectorAll(".drop-select");
-const inputBulanSPP = document.getElementById("bulan-spp");
-const namaSiswaSpp = document.getElementById("nama-siswa-spp");
-const namaSiswaBuku = document.getElementById("nama-siswa-buku");
-const namaSiswaBaju = document.getElementById("nama-siswa-baju");
-const namaSiswaKegiatan = document.getElementById("nama-siswa-kegiatan");
-const listNamaSiswa = document.querySelectorAll(".drop-select p");
-const allInputs = document.querySelectorAll('input:not([type="date"])');
-const sppCheckBox = document.querySelectorAll(
-  "#chip-spp input[type='checkbox']"
-);
-const currencyInputs = document.querySelectorAll("input[data-type='currency']");
-const selectiveInput = document.querySelectorAll(
-  "input[data-type='selective']"
-);
-const inputDates = document.querySelectorAll(".tanggal");
-const widthVW = window.innerWidth;
-const noResultsMessage = document.createElement("p");
-const namaDropSiswaSPP = dropSelectSPP.closest(".drop-select");
-const namaDropSiswaBuku = dropSelectBuku.closest(".drop-select");
-const namaDropPesanBuku = dropPesanBuku.closest(".drop-select");
-const namaDropSiswaBaju = dropSelectBaju.closest(".drop-select");
-const namaDropPesanBaju = dropPesanBaju.closest(".drop-select");
-const namaDropSiswaKegiatan = dropSelectKegiatan.closest(".drop-select");
-const parentNama = document.querySelectorAll(".w-label.drop-parent");
-const tutupDropSelect = document.querySelectorAll("#back-drop-select");
-const today = new Date();
-const year = today.getFullYear();
-const month = String(today.getMonth() + 1).padStart(2, "0"); // Ingat bahwa bulan dimulai dari 0 (Januari adalah bulan 0)
-const day = String(today.getDate()).padStart(2, "0"); // PadStart untuk menambahkan '0' jika hanya satu digit
-const formattedDate = `${year}-${month}-${day}`;
- const allContents = document.querySelectorAll(".main-page > div");
- allContents.forEach((e)=>{
-  if (e.id === "konten-spp") {
-  e.style.display = "block";
-  } else {
-  e.style.display = "none";
-  }
- });
-document.addEventListener("DOMContentLoaded", () => {
-  //Navbar
-  // Tambahkan event listener untuk setiap nav-base
-  // Menambahkan event listener ke semua elemen navBase
-navBases.forEach(function (navBase) {
-  navBase.addEventListener("click", () => {
-    navBases.forEach((item) => {
-      item.classList.remove("active");
-    });
-    navBase.classList.add("active");
-    showContent(navBase.id);
-    window.scrollTo({
-      top: 0,
-      behavior: "instant",
-    });
-  });
-});
-
-// Fungsi untuk menampilkan konten yang sesuai dengan id
-function showContent(id) {
-  const allContents = document.querySelectorAll(".main-page > div");
-  allContents.forEach((content) => {
-    console.log(`Hiding content: ${content.id}`);
-    content.style.display = "none";
-    const fabBtnSecondChild = content.querySelectorAll(".btn-fab:nth-child(2)");
-    fabBtnSecondChild.forEach((fabBtn) => {
-      if (fabBtn) {
-        fabBtn.classList.remove("active");
-      }
-    });
-  });
-
-  // Menampilkan konten yang sesuai
-  const contentElement = document.getElementById("konten-" + id);
-  if (contentElement) {
-    console.log(`Showing content: ${contentElement.id}`);
-    contentElement.style.display = "block";
-    console.log('After setting block:', getComputedStyle(contentElement).display);
-    
-    setTimeout(() => {
-      const fabBtnSecondChild = contentElement.querySelector(".btn-fab:nth-child(2)");
-      if (fabBtnSecondChild) {
-        fabBtnSecondChild.classList.add("active");
-      }
-    }, 50);
-  } else {
-    console.log("tidak ada halaman");
-  }
+:root {
+  --utama: #396b1c;
+  --hijau: #2ca14e;
+  --kuning: #e8a60f;
+  --abu-abu: #7c7c7c;
+  --dasar: #eff1f4;
+  --border: #eff1f4;
+  --hijau-cerah: #d3eed9;
+  --merah: #fec9c9;
+}
+* {
+  box-sizing: border-box;
+  user-select: none;
+}
+body,
+html {
+  margin: 0;
+  padding: 0;
+  font-family: "Inter", sans-serif;
+}
+body.modal-open {
+  overflow-y: hidden;
+}
+a,
+p,
+h1,
+h2,
+h3,
+h4,
+span {
+  font-weight: normal;
+  margin: 0;
+  padding: 0;
+}
+a,
+p,
+h4,
+td {
+  font-size: 1rem;
+}
+h1 {
+  font-size: 3rem;
+}
+h2 {
+  font-size: 2rem;
+}
+h3 {
+  font-size: 1.5rem;
+}
+span {
+  font-size: 0.9rem;
+}
+.khusus {
+  font-size: 3rem;
+}
+.biasa {
+  font-weight: 600;
+}
+.sedang {
+  font-weight: 700;
+}
+.tebal {
+  font-weight: 800;
+}
+.text-p {
+  height: 1.2rem;
+}
+.text-h1 {
+  height: 3.1rem;
+}
+.text-h2 {
+  height: 2.1rem;
+}
+.text-h3 {
+  height: 1.8rem;
+}
+.text-span {
+  height: 0.9rem;
+}
+.text-khusus {
+  height: 3rem;
+}
+.top-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 64px;
+  background-color: white;
+  padding: 0.35rem 0.5rem;
+  display: flex;
+  z-index: 6;
+  transition: all 0.35s ease-in-out;
+}
+.line-bar {
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 100%;
+  position: relative;
+}
+.liner {
+  position: absolute;
+  width: 55%;
+  border: 1.5px solid black;
+  transition: all 0.3s ease-in-out;
+}
+.liner:first-child {
+  top: 30%;
+  transform: none;
+}
+.liner:last-child {
+  top: 65%;
+  transform: none;
+}
+.liner:nth-child(2) {
+  width: 55%;
+}
+.line-bar.active .liner:first-child {
+  top: 50%;
+  width: 60%;
+  transform: rotate(45deg);
 }
 
+.line-bar.active .liner:nth-child(2) {
+  width: 0;
+}
 
-  menu.addEventListener("click", function () {
-    this.classList.toggle("active");
-    nav.classList.toggle("active");
-    main.classList.toggle("active");
-  });
+.line-bar.active .liner:last-child {
+  top: 50%;
+  width: 60%;
+  transform: rotate(-45deg);
+}
+.navbar {
+  position: fixed; /* Membuat navbar tetap di tempat */
+  background-color: white;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  left: 0;
+  bottom: 0;
+  display: flex;
+  transition: all 0.3s ease-in-out;
+  z-index: 5;
+}
+.navbar .nav-base {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  user-select: none;
+  transition: all 0.2s ease-in-out;
+  position: relative;
+}
+.navbar .nav-base::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  transition: all 0.35s ease-in-out;
+}
+.navbar .nav-base.active:hover::before {
+  opacity: 0;
+}
 
-  //Topbar
-  window.addEventListener("scroll", () => {
-    if (window.scrollY > 0) {
-      topBar.classList.add("scroll");
-    } else {
-      topBar.classList.remove("scroll");
+.navbar .nav-base:hover {
+  color: white;
+}
+.navbar .nav-base .text-menu {
+  margin-left: 1rem;
+  opacity: 1;
+  visibility: visible;
+}
+.navbar .nav-base .logo-nav {
+  display: inline-block;
+  position: relative;
+  left: 0;
+  transform: none;
+}
+
+.navbar.active .nav-base .logo-nav {
+  left: 50%;
+  transform: translateX(-50%);
+  transition: all 0.3s ease-in-out;
+}
+.base-bar {
+  display: flex;
+  align-items: center;
+  position: relative;
+  height: 100%;
+  width: 20%;
+}
+.base-bar img {
+  height: auto;
+  width: calc(100vh / 13);
+}
+.base-bar img:nth-child(2) {
+  height: auto;
+  width: calc(100vh / 8);
+  margin-left: 0.5rem;
+}
+.main {
+  background-color: var(--dasar);
+  width: auto; /* Menggunakan 80% lebar untuk main */
+  min-height: 100vh;
+  max-height: 100%;
+  overflow: hidden;
+  padding: 1rem;
+  transition: all 0.3s ease-in-out;
+}
+.main-page {
+  padding-top: 1rem;
+  background-color: white;
+  width: 100%;
+  min-height: calc(100vh - 64px - 2rem);
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
+}
+.splash-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  z-index: 9999;
+  opacity: 1;
+  visibility: visible;
+  transition: all 0.3s ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.splash-screen img {
+  width: calc(100vh / 5);
+  height: auto;
+}
+.splash-screen.remove {
+  opacity: 0;
+  visibility: hidden;
+}
+.btn-fab {
+  position: fixed;
+  border-radius: 50%;
+  height: 55px;
+  width: 55px;
+  background-color: var(--utama);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  cursor: pointer;
+  z-index: 9;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
+    rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+}
+.btn-fab span {
+  font-size: 2.5rem;
+}
+.btn-fab:nth-child(2) span {
+  font-size: 1.8rem;
+}
+.btn-fab:nth-child(2) {
+  background-color: #e6e6e6;
+  color: black;
+  height: 45px;
+  width: 45px;
+  z-index: 8;
+  transition: bottom 0.25s ease-in-out; /* Transisi untuk perubahan bottom */
+}
+.modal {
+  height: 100%;
+  width: 100%;
+  visibility: hidden;
+  opacity: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.5);
+  transition: all 0.1s ease;
+  z-index: 11;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+.modal.active {
+  opacity: 1;
+  visibility: visible;
+}
+.modal-card {
+  position: relative;
+  overflow: hidden;
+  background-color: var(--dasar);
+  visibility: hidden;
+  opacity: 0;
+  padding: 1rem;
+  transition: opacity 0.15s ease, visibility 0.35s ease,
+    transform 0.3s ease-in-out, border-radius 0.3s ease-in-out;
+}
+.modal-card.active {
+  transform: scale(1);
+  visibility: visible;
+  opacity: 1;
+}
+.modal-card::before {
+  position: absolute;
+  content: "";
+  top: 8px;
+  left: 50%;
+  height: 4px;
+  width: 20vw;
+  transform: translate(-50%, 0);
+  background-color: #ccc;
+  border-radius: 25px;
+  z-index: -1;
+}
+.modal-card.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal-header {
+  padding: 0.25rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.modal-card.non {
+  display: none;
+}
+.modal-content {
+  display: grid;
+  margin: 1rem 0;
+  border-radius: 25px;
+  align-items: center;
+  background-color: white;
+}
+.modal-content:last-child {
+  margin-bottom: 1.5rem;
+}
+.modal-content p:last-child {
+  text-align: right;
+  font-weight: 700;
+}
+.modal-total {
+  margin-top: auto;
+  padding: 1rem;
+  padding-bottom: 0;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+}
+.modal-total::before {
+  content: "";
+  position: absolute;
+  bottom: -1rem;
+  left: -1rem;
+  width: calc(100% + 2rem);
+  height: calc(100% + 1rem);
+  /* height: 100%; */
+  background-color: white;
+  z-index: -1;
+}
+.modal-footer {
+  background-color: white;
+  position: absolute;
+  left: 0rem;
+  bottom: 0;
+  width: 100%;
+  height: 20vh;
+  z-index: -1;
+}
+.close-modal {
+  position: relative;
+  cursor: pointer; /* Ensure cursor changes to pointer on hover */
+}
+
+.close-modal .close-line {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  height: 3px;
+  width: 100%;
+  background-color: black;
+  border-radius: 25px;
+  transform-origin: center; /* Set transform origin to center */
+}
+
+.close-modal .close-line:first-child {
+  transform: translate(-50%, -50%) rotate(45deg); /* Adjust transform order and translation */
+}
+
+.close-modal .close-line:last-child {
+  transform: translate(-50%, -50%) rotate(-45deg); /* Adjust transform order and translation */
+}
+.btn-history {
+  margin-left: auto;
+  margin-right: 0.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.modal-card.side {
+  position: relative;
+  visibility: hidden;
+  transition: opacity 0.15s ease, visibility 0.35s ease,
+    transform 0.3s ease-in-out;
+}
+.modal-card.side.active {
+  opacity: 1;
+  visibility: visible;
+}
+.side-body {
+  width: 100%;
+}
+.btn {
+  display: flex;
+  justify-content: center;
+  border-radius: 15px;
+  padding: 0.3rem 0.7rem;
+  text-decoration: none;
+  width: fit-content;
+  height: fit-content;
+  cursor: pointer;
+}
+.btn.full {
+  width: 100%;
+}
+.btn-yellow {
+  background-color: #f1eac8da;
+  color: var(--kuning);
+  border: 1px solid #e8a70f3a;
+}
+.btn-green {
+  background-color: var(--hijau-cerah);
+  color: var(--hijau);
+  border: 1px solid #2ca14d3a;
+}
+.btn-gray {
+  background-color: #e6e6e6;
+  color: var(--abu-abu);
+  border: 1px solid #7c7c7c41;
+}
+.btn-utama {
+  background-color: var(--utama);
+  color: #fff;
+  transition: 0.3s ease-in-out;
+}
+.btn-utama:hover {
+  background-color: #4e9127;
+  box-shadow: rgba(0, 0, 0, 0.2) 0 3px 10px;
+  color: rgba(255, 255, 255, 0.65);
+  transform: translateY(-2px);
+}
+.btn-white {
+  background-color: #fff;
+  color: #000 !important;
+  transition: 0.3s ease-in-out;
+}
+.btn-white:hover {
+  background-color: #e9e9e9;
+  box-shadow: rgba(255, 255, 255, 0.2) 0 3px 10px;
+  color: rgba(0, 0, 0, 0.65);
+  transform: translateY(-2px);
+}
+.btn-red {
+  background-color: var(--merah);
+  color: red;
+  border: 1px solid #f88;
+}
+.topic-history {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  margin: 0.5rem 0;
+  cursor: pointer;
+}
+.topic-history b {
+  transform: rotate(90deg);
+  transition: all 0.3s ease-in-out;
+}
+.topic-history.active b {
+  transform: rotate(-90deg);
+}
+.topic-content {
+  background-color: white;
+  max-height: 0;
+  overflow: hidden;
+  border-radius: 25px;
+  transition: all 0.3s ease-in-out;
+}
+.topic-content.active {
+  max-height: 1300px;
+}
+.data-riwayat {
+  display: grid;
+  gap: 0.5rem;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.data-riwayat p:last-child {
+  justify-self: flex-end;
+  cursor: pointer;
+}
+.data-pagination {
+  display: flex;
+  align-items: center;
+}
+.data-pagination .topic-page {
+  cursor: pointer;
+  margin: 5px 2.5px;
+  padding: 0.5rem 0.75rem;
+  transition: all 0.25s ease-in-out;
+  border-radius: 10px;
+}
+.data-pagination .topic-page.active {
+  background-color: var(--utama);
+  color: white;
+}
+.data-pagination .topic-page:hover {
+  background-color: var(--utama);
+  color: white;
+}
+form {
+  margin-bottom: 1rem;
+}
+.form-container {
+  position: relative;
+  width: 100%;
+  height: auto;
+  margin: 1rem 0;
+  display: flex;
+}
+input {
+  width: 100%;
+  padding: 0.75rem;
+  padding-left: 2.5rem;
+  border-radius: 25px;
+  border: none;
+  outline: none;
+  font-size: 0.9rem;
+  transition: all 0.25s ease-in-out;
+}
+input::-webkit-search-cancel-button {
+  -webkit-appearance: none;
+  background-color: darkgray;
+  -webkit-mask-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23777'><path d='M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z'/></svg>");
+  background-size: contain;
+  height: 20px;
+  width: 20px;
+  cursor: pointer;
+}
+input:focus {
+  outline: none;
+}
+.ico {
+  position: absolute;
+  top: 50%;
+  left: 0.5rem;
+  transform: translateY(-50%);
+  transition: all 0.25s ease;
+}
+.modal-body.form {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 0 1rem;
+  padding: 1rem;
+  padding-top: 0.5rem;
+  margin-top: 1rem;
+  background-color: white;
+  /* position: absolute;
+    top: auto; */
+  width: calc(100% + 2rem);
+  transform: translateX(-1rem);
+  height: auto;
+}
+.ico.right {
+  left: auto;
+  right: 0.5rem;
+}
+input[type="date"]::-webkit-calendar-picker-indicator {
+  filter: invert(1); /* Mengubah warna tombol menjadi putih */
+  opacity: 0; /* Memberikan opasitas untuk efek visual */
+  cursor: pointer; /* Mengubah kursor menjadi tanda tangan */
+}
+.button-save {
+  width: 100%;
+  margin-top: 1rem;
+}
+.button-save .btn {
+  padding: 0.5rem;
+}
+.drop-select {
+  left: 0;
+  width: 100%;
+  background-color: white;
+  z-index: 9;
+  padding: 0 1rem;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 3px 8px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  transition: all 0.35s ease;
+  display: none;
+  animation: dropAnim 0.3s forwards;
+}
+.drop-select.active {
+  display: block;
+}
+.drop-select .header {
+  display: none;
+  position: sticky;
+  z-index: 10;
+  top: 0;
+  background-color: white;
+  transform: translateX(-1rem);
+  width: calc(100% + 2rem);
+  justify-content: center;
+  align-items: center;
+  padding: 0.5rem 0;
+  margin-bottom: 0.5rem;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 5px 15px;
+}
+.drop-select p {
+  position: relative;
+  color: black;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+.drop-select p:not(.kosong):hover::before {
+  background-color: var(--utama);
+}
+.drop-select p:not(.kosong):hover {
+  color: white;
+}
+.drop-select p::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -2.5rem;
+  width: calc(100% + 1rem + 2.5rem);
+  height: 100%;
+  background-color: transparent;
+  z-index: -1;
+  transition: all 0.2s ease-in-out;
+}
+.w-label {
+  width: 100%;
+  flex-direction: column;
+  margin-bottom: 0.75rem;
+  position: relative;
+}
+.w-label .form-container {
+  margin: 0.5rem 0;
+}
+.w-label .form-container.chip {
+  flex-wrap: wrap;
+  width: 100%;
+  gap: 0.5rem;
+}
+input[type="checkbox"] {
+  position: absolute;
+  width: fit-content;
+  opacity: 0;
+}
+input[type="checkbox"] + label {
+  transition: all 0.25s ease;
+  padding-left: 0.75rem;
+  position: relative;
+}
+input[type="checkbox"] + label::before {
+  font-family: "Material Symbols Outlined";
+  content: "\e5ca";
+  left: 0.5rem;
+  top: 50%;
+  font-size: 1.5rem;
+  position: absolute;
+  opacity: 0;
+  color: var(--hijau);
+  transform: translateY(-50%) rotate(0) scale(0);
+  transition: all 0.3s ease;
+}
+input[type="checkbox"]:hover + label {
+  background-color: #e8a70f2f;
+  color: #e8a60f;
+  border: 1px solid #eed49894;
+}
+input[type="checkbox"]:checked + label {
+  background-color: var(--hijau-cerah);
+  color: var(--hijau);
+  border: 1px solid #2ca14d3a;
+}
+input[type="checkbox"]:checked + label {
+  padding-left: 2rem;
+}
+input[type="checkbox"]:checked + label::before {
+  opacity: 1;
+  transform: translateY(-50%) rotate(-360deg) scale(1);
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+.alert {
+  position: fixed; /* Menggunakan fixed position */
+  z-index: 1000; /* Menempatkan alert di atas elemen lain */
+  width: 100%;
+  max-width: 300px;
+  color: white;
+  border-radius: 5px;
+  display: flex;
+  padding: 15px;
+  padding-left: calc(15px + 1.5rem);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  visibility: hidden;
+  opacity: 0;
+  top: 0;
+  transition: opacity 0.35s ease, top 0.5s ease-in-out;
+}
+.alert.berhasil {
+  background-color: var(--hijau-cerah);
+  color: var(--hijau);
+}
+.alert.berhasil::before {
+  font-family: "Material Symbols Outlined";
+  content: "\e5ca";
+  left: 0.5rem;
+  top: 50%;
+  font-size: 1.5rem;
+  position: absolute;
+  opacity: 0;
+  color: var(--hijau);
+  transform: translateY(-50%) rotate(0) scale(0);
+  transition: all 0.35s ease;
+}
+.alert.gagal {
+  background-color: var(--merah);
+  color: red;
+}
+.alert.gagal::before {
+  font-family: "Material Symbols Outlined";
+  content: "\e000";
+  left: 0.5rem;
+  top: 50%;
+  font-size: 1.5rem;
+  position: absolute;
+  opacity: 0;
+  color: red;
+  transform: translateY(-50%) rotate(0) scale(0);
+  transition: all 0.35s ease;
+}
+.alert.slideIn.berhasil::before {
+  opacity: 1;
+  transform: translateY(-50%) rotate(-360deg) scale(1);
+}
+.alert.slideIn.gagal::before {
+  opacity: 1;
+  transform: translateY(-50%) rotate(-360deg) scale(1);
+}
+.alert.slideIn {
+  opacity: 1;
+  visibility: visible;
+}
+.alert.slideOut.berhasil::before {
+  opacity: 0;
+  transform: translateY(-50%) rotate(0) scale(0);
+}
+.alert.slideOut.gagal::before {
+  opacity: 0;
+  transform: translateY(-50%) rotate(0) scale(0);
+}
+.alert.slideOut {
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.4s ease-in-out, opacity 0.3s ease;
+}
+.data-content {
+  width: 100%;
+}
+.header-content {
+  grid-template-rows: 1fr;
+  grid-template-columns: calc(40% - 0.5rem) 20% 25% 15%;
+  gap: 0.5rem;
+  padding: 0.5rem 0;
+  align-items: center;
+}
+.data-siswa {
+  display: grid;
+  gap: 0.5rem;
+  position: relative;
+  padding: 0.75rem 0;
+  align-items: center;
+  cursor: pointer;
+}
+.body-content .data-siswa::after {
+  content: "";
+  position: absolute; /* Memposisikan pseudo-elemen di luar elemen */
+  bottom: 0;
+  height: 1px; /* Tinggi border */
+  border-bottom: 1px solid rgba(0, 0, 0, 0.15); /* Penting agar lebar pseudoelemen termasuk padding */ /* Penting agar lebar pseudoelemen termasuk padding */
+}
+
+.p-1 {
+  padding: 1rem 0;
+}
+.no-content {
+  display: none;
+}
+@media screen and (max-width: 479px) {
+  a,
+  p,
+  h4,
+  td {
+    font-size: 0.8rem;
+  }
+  h1 {
+    font-size: 1rem;
+  }
+  h2 {
+    font-size: 1rem;
+  }
+  h3 {
+    font-size: 1rem;
+  }
+  span {
+    font-size: 0.7rem;
+  }
+  .khusus {
+    font-size: 1.5rem;
+  }
+  .text-p {
+    height: 1rem;
+  }
+  .text-h1 {
+    height: 1rem;
+  }
+  .text-h2 {
+    height: 1.2rem;
+  }
+  .text-h3 {
+    height: 1.2rem;
+  }
+  .text-span {
+    height: 0.8rem;
+  }
+  .text-khusus {
+    height: 1.5rem;
+  }
+  .top-bar {
+    background-color: transparent;
+    backdrop-filter: none;
+  }
+  .top-bar.scroll {
+    background-color: transparent;
+    backdrop-filter: blur(5px);
+  }
+  .line-bar {
+    display: none;
+  }
+  .navbar {
+    top: auto;
+    padding: 0;
+    width: 100%;
+    height: 64px;
+    flex-direction: row;
+  }
+  .navbar.active {
+    width: 100%;
+  }
+  .base-bar img {
+    width: calc(100vh / 17);
+  }
+  .base-bar img:nth-child(2) {
+    width: calc(100vh / 13);
+  }
+  .navbar .nav-base {
+    border-radius: 0;
+    padding: 1.25rem;
+    margin: 0;
+    width: 25%;
+    color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+  }
+  .navbar .nav-base.active {
+    color: var(--utama);
+  }
+  .navbar .nav-base .text-menu {
+    display: none;
+  }
+  .navbar .nav-base::before {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.3);
+    opacity: 0;
+  }
+  .navbar .nav-base:hover::before {
+    width: 50px;
+    opacity: 1;
+  }
+  .navbar .nav-base.active:hover:before {
+    width: 50px;
+    height: 50px;
+  }
+  .navbar .nav-base.active::before {
+    opacity: 0;
+    width: 50px;
+  }
+  .main {
+    padding-top: calc(64px + 1rem);
+    padding-left: 0;
+    padding-right: 0;
+    margin-left: 0;
+  }
+  .main-page {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    padding-bottom: 64px;
+  }
+  .main.active {
+    margin-left: 0;
+  }
+  .btn-fab {
+    right: 1rem;
+    bottom: calc(1rem + 64px);
+  }
+  .btn-fab:nth-child(2) {
+    right: calc(1rem + 5px);
+    bottom: calc(1rem + 5px + 64px);
+  }
+  .btn-fab:nth-child(2).active {
+    bottom: calc(2rem + 55px + 64px);
+  }
+  .modal-footer {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+  .modal {
+    display: block;
+  }
+  .modal-card {
+    border-radius: 25px 25px 0 0;
+    width: 100%;
+    height: auto;
+    min-height: 50vh;
+    overflow-y: hidden;
+    transform: translateY(100vh);
+  }
+  .modal-card::before {
+    display: block;
+  }
+  .modal-card.active {
+    transform: translateY(35vh);
+  }
+  .close-modal {
+    width: calc(100vh / 45);
+    height: calc(100vh / 45);
+  }
+  .modal-content {
+    grid-template-columns: calc(50% - 0.5rem) 50%;
+    grid-row: 2fr;
+    gap: 0.35rem 0.5rem;
+    padding: 0.75rem 1rem;
+  }
+  .modal-content p:first-child {
+    grid-column: 1/2;
+    grid-row: 1/2;
+  }
+  .modal-content span {
+    grid-column: 1/2;
+    grid-row: 2/3;
+  }
+  .modal-content p:last-child {
+    grid-column: 2/3;
+    grid-row: 1/3;
+  }
+  .modal-header {
+    padding: 1rem 0;
+    padding-bottom: 0;
+  }
+  .modal-card.side {
+    width: 100%;
+    margin-left: 0;
+    border-radius: 0;
+    min-height: 50vh;
+    transform: translateY(100vh);
+    overflow-y: hidden;
+  }
+  .modal-card.side.active {
+    transform: translateY(50vh);
+  }
+  .topic-content {
+    padding: 0 0.75rem;
+  }
+  .data-riwayat {
+    grid-template-columns: 1fr 20% 20%;
+    grid-template-rows: 2fr;
+    row-gap: 0.25rem;
+  }
+  .data-riwayat p:nth-child(3) {
+    grid-column: 1/2;
+    grid-row: 2/3;
+    justify-self: flex-start;
+  }
+  input {
+    background-color: var(--dasar);
+    box-shadow: none;
+  }
+  .ico {
+    color: darkgray;
+  }
+  input::placeholder {
+    color: darkgray;
+  }
+  input:focus {
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 5px 15px;
+  }
+  input:focus + .ico {
+    color: darkgray;
+  }
+  input:focus + .ico + .ico.right {
+    color: darkgray;
+  }
+  .button-save {
+    padding: 0;
+  }
+  #form .w-label:nth-child(2),
+  #form .w-label:nth-child(3) {
+    width: 100%;
+  }
+  .drop-select {
+    position: fixed;
+    padding-left: 1rem;
+    border-radius: 0;
+    height: 100%;
+    max-height: 100vh;
+    top: 100vh;
+    min-height: 100vh;
+  }
+  .drop-select.active {
+    max-height: 100vh;
+  }
+  @keyframes dropAnim {
+    from {
+      top: 100vh;
     }
-  });
-
-  //Splash Screen
-  function splashOn() {
-    const splashScreen = document.querySelector(".splash-screen");
-    setTimeout(() => {
-      splashScreen.classList.add("remove");
-      setTimeout(() => {
-        splashScreen.style.display = "none";
-      }, 1000);
-    }, 2000);
-  }
-  splashOn();
-
-  //Main
-  // fungsi mencari nama siswa di dalam page
-  function SearchItems(event, start) {
-    event.addEventListener("input", function () {
-      start.appendChild(noResultsMessage);
-      const searchTerm = event.value.toLowerCase();
-      let foundSpp = false;
-      const listData = start.querySelectorAll(".data-siswa");
-      listData.forEach(function (item) {
-        const text = item.textContent.toLowerCase();
-        if (text.includes(searchTerm)) {
-          item.style.display = "grid";
-          foundSpp = true;
-        } else {
-          item.style.display = "none";
-        }
-      });
-
-      if (foundSpp) {
-        noResultsMessage.style.display = "none";
-      } else {
-        noResultsMessage.style.display = "block";
-      }
-    });
-  }
-  SearchItems(pencarianSpp, searchSpp);
-  SearchItems(pencarianBuku, searchBuku);
-  SearchItems(pencarianBaju, searchBaju);
-  SearchItems(pencarianKegiatan, searchKegiatan);
-
-  //Fab Button
-  function fabModal(event, target) {
-    event.addEventListener("click", () => {
-      modal.classList.add("active");
-      target.classList.remove("non");
-      setTimeout(() => {
-        target.classList.add("active");
-      }, 50);
-      document.body.classList.add("modal-open");
-    });
-  }
-
-  fabModal(btn_bayarSPP, bayarSpp);
-  fabModal(btn_bayarBuku, bayarBuku);
-  fabModal(btn_tambahBuku, TambahBuku);
-  fabModal(btn_bayarBaju, bayarBaju);
-  fabModal(btn_tambahBaju, TambahBaju);
-  fabModal(btn_bayarKegiatan, bayarKegiatan);
-  fabModal(btnHistory, modalSide);
-
-  const modalSpp = document.getElementById("modal-spp");
-  //Modal Function
-  // fungsi membuka modal detail tagihan
-  function openModalBox(event, target) {
-    const boxModal = event.querySelectorAll(".data-siswa");
-    boxModal.forEach((item) => {
-      item.addEventListener("click", () => {
-        modal.classList.add("active");
-        target.classList.remove("non");
-        setTimeout(() => {
-          target.classList.add("active");
-        }, 50);
-        document.body.classList.add("modal-open");
-      });
-    });
-  }
-  openModalBox(searchSpp, modalSpp);
-  openModalBox(searchBuku, modalBuku);
-  openModalBox(searchBaju, modalBaju);
-  openModalBox(searchKegiatan, modalKegiatan);
-
-  function tutupModals() {
-    modal.classList.remove("active");
-    modalSpp.classList.remove("active");
-    modalSpp.classList.add("non");
-    bayarSpp.classList.remove("active");
-    bayarSpp.classList.add("non");
-    modalBuku.classList.remove("active");
-    modalBuku.classList.add("non");
-    bayarBuku.classList.remove("active");
-    bayarBuku.classList.add("non");
-    TambahBuku.classList.remove("active");
-    TambahBuku.classList.add("non");
-    modalBaju.classList.remove("active");
-    modalBaju.classList.add("non");
-    bayarBaju.classList.remove("active");
-    bayarBaju.classList.add("non");
-    TambahBaju.classList.remove("active");
-    TambahBaju.classList.add("non");
-    modalKegiatan.classList.remove("active");
-    modalKegiatan.classList.add("non");
-    bayarKegiatan.classList.remove("active");
-    bayarKegiatan.classList.add("non");
-    modalSide.classList.remove("active");
-    modalSide.classList.add("non");
-    allDropSelect.forEach((e) => e.classList.remove("active"));
-    document.body.classList.remove("modal-open");
-    allInputs.forEach((el) => {
-      el.checked = false;
-      el.value = "";
-    });
-  }
-
-  // Event listener untuk menutup modal saat modal di luar area konten diklik
-  modal.addEventListener("click", tutupModals);
-
-  // Event listener untuk menutup modal saat tombol close-modal di dalam modalSpp diklik
-  closeModalButtons.forEach((close) => {
-    close.addEventListener("click", (e) => {
-      e.stopPropagation(); // Menghentikan penyebaran event ke atas
-      tutupModals();
-    });
-  });
-
-  // Event listener untuk membuka modalSpp
-  function tahanModal(effect) {
-    effect.addEventListener("click", (e) => {
-      e.stopPropagation(); // Menghentikan penyebaran event ke atas
-      // Buka modal
-      modal.classList.add("active");
-      effect.classList.add("active");
-      document.body.classList.add("modal-open");
-    });
-  }
-  tahanModal(modalSpp);
-  tahanModal(bayarSpp);
-  tahanModal(modalBuku);
-  tahanModal(bayarBuku);
-  tahanModal(TambahBuku);
-  tahanModal(modalBaju);
-  tahanModal(bayarBaju);
-  tahanModal(TambahBaju);
-  tahanModal(modalKegiatan);
-  tahanModal(bayarKegiatan);
-  tahanModal(modalSide);
-
-  modal.addEventListener("scroll", () => {
-    const fiftyVH = window.innerHeight * 0.3;
-
-    card_modals.forEach((card_modal) => {
-      if (modal.scrollTop > fiftyVH) {
-        card_modal.style.borderRadius = "0";
-      } else {
-        card_modal.style.borderRadius = "25px 25px 0 0";
-      }
-    });
-  });
-
-  //Modal Side Function
-  btnHistory.addEventListener("click", () => {
-    modal.classList.add("active");
-    modalSide.classList.remove("non");
-    setTimeout(() => {
-      modalSide.classList.add("active");
-    }, 50);
-  });
-  riwayatHeader.forEach((e) => {
-    e.addEventListener("click", () => {
-      const isActive = e.classList.contains("active");
-      document.querySelectorAll(".topic-history").forEach((otherItem) => {
-        otherItem.classList.remove("active");
-        otherItem.nextElementSibling.classList.remove("active");
-      });
-      const content = e.nextElementSibling;
-      if (!isActive) {
-        e.classList.toggle("active");
-        content.classList.toggle("active");
-      }
-    });
-  });
-
-  //Formulir Function
-
-  noResultsMessage.textContent = "Data tidak ditemukan";
-  noResultsMessage.style.display = "none";
-  noResultsMessage.style.paddingTop = "0.75rem";
-  noResultsMessage.classList.add("kosong");
-  // Fungsi pencarian data SPP
-  function filterItems(searchTerm, semuaData) {
-    searchTerm.addEventListener("input", function () {
-      const pencarian = searchTerm.value.toLowerCase();
-      const namaItems = semuaData.querySelectorAll("p");
-      let foundSpp = false;
-
-      // Hapus pesan tanpa hasil jika sudah ada
-      if (semuaData.contains(noResultsMessage)) {
-        semuaData.removeChild(noResultsMessage);
-      }
-
-      namaItems.forEach(function (item) {
-        const text = item.textContent.toLowerCase();
-        if (text.includes(pencarian)) {
-          item.style.display = "block";
-          foundSpp = true;
-        } else {
-          item.style.display = "none";
-        }
-      });
-
-      // Tambahkan pesan tanpa hasil jika tidak ada yang ditemukan
-      if (!foundSpp) {
-        semuaData.appendChild(noResultsMessage);
-        noResultsMessage.style.display = "block";
-      } else {
-        noResultsMessage.style.display = "none";
-      }
-    });
-  }
-  // Memilih semua elemen dengan kelas .w-label
-
-  const namaDataSiswa = Array.from(parentNama).map((element) => {
-    return element.querySelector(".drop-select");
-  });
-  console.log(namaDataSiswa);
-
-  filterItems(namaSiswaSpp, namaDataSiswa[0]);
-  filterItems(dropSelectSPP, namaDropSiswaSPP);
-  filterItems(namaSiswaBuku, namaDataSiswa[1]);
-  filterItems(dropSelectBuku, namaDropSiswaBuku);
-  filterItems(namaPesanBuku, namaDataSiswa[2]);
-  filterItems(dropPesanBuku, namaDropPesanBuku);
-  filterItems(namaSiswaBaju, namaDataSiswa[3]);
-  filterItems(dropSelectBaju, namaDropSiswaBaju);
-  filterItems(namaPesanBaju, namaDataSiswa[4]);
-  filterItems(dropPesanBaju, namaDropPesanBaju);
-  filterItems(namaSiswaKegiatan, namaDataSiswa[5]);
-  filterItems(dropSelectKegiatan, namaDropSiswaKegiatan);
-
-  // Fungsi mengeklik nama dan memindahkannya pada dropdown ke input (semuanya)
-  function inputNama(event, target) {
-    target.forEach((e) => {
-      e.addEventListener("click", () => {
-        event.value = e.textContent;
-        if (widthVW < 1024) {
-          const formModal = e.closest(".form");
-          const modalCard = formModal.closest(".modal-card.active");
-          if (formModal && modalCard) {
-            modalCard.style.transform = "translateY(35vh)";
-            formModal.style.transform = "translateX(-1rem)";
-            e.closest(".drop-select").classList.remove("active");
-            modal.style.overflow = "";
-          }
-        } else {
-          e.closest(".drop-select").classList.remove("active");
-          modal.style.overflow = "";
-        }
-        sendValue();
-      });
-    });
-  }
-  inputNama(namaSiswaSpp, listNamaSiswa);
-  inputNama(namaSiswaBuku, listNamaSiswa);
-  inputNama(namaPesanBuku, listNamaSiswa);
-  inputNama(namaSiswaBaju, listNamaSiswa);
-  inputNama(namaPesanBaju, listNamaSiswa);
-  inputNama(namaSiswaKegiatan, listNamaSiswa);
-
-  // Fungsi tutup dropdown (semuanya)
-
-  tutupDropSelect.forEach((e) => {
-    e.addEventListener("click", () => {
-      allDropSelect.forEach((even) => {
-        const formModal = e.closest(".form");
-        const modalCard = formModal.closest(".modal-card.active");
-        if (formModal && modalCard) {
-          modalCard.style.transform = "translateY(35vh)";
-          formModal.style.transform = "translateX(-1rem)";
-          even.classList.remove("active");
-          modal.style.overflow = "";
-        }
-      });
-    });
-  });
-
-  // Fungsi mengaktifkan dropdown jika input focus
-  selectiveInput.forEach((input) => {
-    input.addEventListener("focus", function () {
-      const formContainer = input.closest(".w-label");
-      const dropSelect = formContainer.querySelector(".drop-select");
-      if (widthVW < 1024) {
-        const formModal = input.closest(".form");
-        const modalCard = formModal.closest(".modal-card.active");
-        if (formModal && modalCard) {
-          modalCard.style.transform = "none";
-          setTimeout(() => {
-            formModal.style.transform = "none";
-          }, 300);
-          dropSelect.classList.add("active");
-          modal.style.overflow = "hidden";
-        }
-      } else {
-        dropSelect.classList.add("active");
-        modal.style.overflow = "hidden";
-      }
-    });
-  });
-
-  // fungsi menutup dropSelect dengan klik modal
-  card_el.forEach((modalCard) => {
-    if (widthVW > 1024) {
-      modalCard.addEventListener("click", (event) => {
-        const target = event.target;
-        const isSelectiveInput = Array.from(selectiveInput).some((input) =>
-          input.contains(target)
-        );
-        const allDropSelect = document.querySelectorAll(".drop-select.active");
-
-        if (!isSelectiveInput) {
-          allDropSelect.forEach((ds) => {
-            ds.classList.remove("active");
-          });
-          modal.style.overflow = "";
-        }
-      });
+    to {
+      top: 0;
     }
-  });
-
-  //Alert Function
-  const customAlert = document.getElementById("customAlert");
-
-  let alertCount = 0;
-  let alertHeight = 60;
-
-  // fungsi Button diklik sesuai dengan pesannya apa
-  buttonAll.forEach((button) => {
-    button.addEventListener("click", () => {
-      if (alertCount < 5) {
-        let set = "berhasil";
-        if (set === "berhasil") {
-          showAlert("Data berhasil disimpan", "berhasil");
-        } else if (set === "gagal") {
-          showAlert("Terjadi kesalahan data", "gagal");
-        } else {
-          showAlert("Data berhasil diperbaharui", "berhasil");
-        }
-        alertCount++;
-      }
-    });
-  });
-
-  // fungsi menampilkan pesan
-  function showAlert(message, extra) {
-    const tambahanAlert = document.createElement("div");
-    tambahanAlert.className = "alert";
-    tambahanAlert.classList.add(extra);
-    tambahanAlert.textContent = message;
-    customAlert.appendChild(tambahanAlert);
-    setTimeout(() => {
-      tambahanAlert.classList.add("slideIn");
-      tambahanAlert.style.top = `${(alertCount - 1) * alertHeight + 10}px`;
-    }, 50);
-    setTimeout(function () {
-      hideAlert(tambahanAlert);
-    }, 2000);
   }
-
-  // fungsi menyembunyikan pesan
-  function hideAlert(alertElement) {
-    const currentTop = window.getComputedStyle(alertElement).top;
-    alertElement.classList.add("slideOut");
-    if (alertCount > 1) {
-      alertElement.style.top = `${parseFloat(currentTop) / 4}px`;
-    } else {
-      alertElement.style.top = "";
+  .drop-select .header {
+    display: flex;
+  }
+  .drop-select .header + .form-container {
+    display: block;
+  }
+  .drop-select .header i {
+    position: absolute;
+    left: 1rem;
+    top: auto;
+    cursor: pointer;
+  }
+  .drop-select p {
+    padding: 0.5rem 0;
+  }
+  .alert {
+    right: 50%;
+    transform: translateX(50%);
+  }
+  .data-content {
+    padding-top: 0;
+  }
+  .header-content {
+    display: none;
+  }
+  .data-siswa {
+    grid-template-columns: calc(80% - 0.5rem) 20%;
+    grid-template-rows: 2fr;
+  }
+  .data-siswa p:nth-child(2) {
+    display: none;
+  }
+  .data-siswa p:first-child {
+    grid-column: 1/2;
+    grid-row: 1/2;
+  }
+  .data-siswa p:nth-child(3) {
+    grid-column: 1/2;
+    grid-row: 2/3;
+  }
+  .data-siswa span {
+    grid-column: 2/3;
+    grid-row: 1/3;
+  }
+  .body-content .data-siswa::after {
+    left: -1.5rem;
+    width: calc(100% + 3rem);
+  }
+}
+@media (min-width: 480px) and (max-width: 1023px) {
+  a,
+  p,
+  h4,
+  td {
+    font-size: 0.9rem;
+  }
+  h1 {
+    font-size: 2.7rem;
+  }
+  h2 {
+    font-size: 1.8rem;
+  }
+  h3 {
+    font-size: 1.35rem;
+  }
+  span {
+    font-size: 0.81rem;
+  }
+  .khusus {
+    font-size: 2.7rem;
+  }
+  .text-p {
+    height: 1.1rem;
+  }
+  .text-h1 {
+    height: 2.7rem;
+  }
+  .text-h2 {
+    height: 1.8rem;
+  }
+  .text-h3 {
+    height: 1.35rem;
+  }
+  .text-span {
+    height: 0.81rem;
+  }
+  .text-khusus {
+    height: 2.7rem;
+  }
+  .top-bar {
+    background-color: var(--dasar);
+    backdrop-filter: none;
+  }
+  .top-bar.scroll {
+    background-color: transparent;
+    backdrop-filter: blur(5px);
+  }
+  .line-bar {
+    display: none;
+  }
+  .navbar {
+    top: auto;
+    padding: 0;
+    width: 100%;
+    height: 64px;
+    flex-direction: row;
+  }
+  .navbar.active {
+    width: 100%;
+  }
+  .navbar .nav-base {
+    border-radius: 0;
+    padding: 1.25rem;
+    margin: 0;
+    width: 25%;
+    justify-content: center;
+    color: rgba(0, 0, 0, 0.5);
+  }
+  .navbar .nav-base.active {
+    color: var(--utama);
+    background-color: transparent;
+  }
+  .navbar .nav-base .text-menu {
+    display: none;
+  }
+  .navbar .nav-base::before {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.3);
+    opacity: 0;
+  }
+  .navbar .nav-base:hover::before {
+    width: 50px;
+    opacity: 1;
+  }
+  .navbar .nav-base.active:hover:before {
+    width: 50px;
+    height: 50px;
+  }
+  .navbar .nav-base.active::before {
+    opacity: 0;
+    width: 50px;
+  }
+  .base-bar img {
+    width: calc(100vh / 15);
+  }
+  .base-bar img:nth-child(2) {
+    width: calc(100vh / 10.5);
+  }
+  .main {
+    padding-top: calc(64px + 1rem);
+    padding-left: 0;
+    padding-right: 0;
+    margin-left: 0;
+  }
+  .main.active {
+    margin-left: 0;
+  }
+  .main-page {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    padding-bottom: 64px;
+  }
+  .btn-fab {
+    right: 1rem;
+    bottom: calc(1rem + 64px);
+  }
+  .btn-fab:nth-child(2) {
+    right: calc(1rem + 5px);
+    bottom: calc(1rem + 5px + 64px);
+  }
+  .btn-fab:nth-child(2).active {
+    bottom: calc(2rem + 55px + 64px);
+  }
+  .modal {
+    display: block;
+  }
+  .modal-card {
+    border-radius: 25px 25px 0 0;
+    width: 100%;
+    height: auto;
+    min-height: 50vh;
+    overflow-y: hidden;
+    transform: translateY(100vh);
+  }
+  .modal-card::before {
+    display: block;
+  }
+  .modal-card.active {
+    transform: translateY(35vh);
+  }
+  .close-modal {
+    width: calc(100vh / 40);
+    height: calc(100vh / 40);
+  }
+  .modal-content {
+    grid-template-columns: calc(50% - 0.5rem) 50%;
+    grid-row: 2fr;
+    gap: 0.35rem 0.5rem;
+    padding: 0.75rem 1rem;
+  }
+  .modal-content p:first-child {
+    grid-column: 1/2;
+    grid-row: 1/2;
+  }
+  .modal-content span {
+    grid-column: 1/2;
+    grid-row: 2/3;
+  }
+  .modal-content p:last-child {
+    grid-column: 2/3;
+    grid-row: 1/3;
+  }
+  .modal-header {
+    padding: 1rem 0;
+    padding-bottom: 0;
+  }
+  .modal-footer {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+  .modal-card.side {
+    width: 100%;
+    margin-left: 0;
+    border-radius: 0;
+    min-height: 50vh;
+    transform: translateY(100vh);
+    overflow-y: hidden;
+  }
+  .modal-card.side.active {
+    transform: translateY(50vh);
+  }
+  .topic-content {
+    padding: 0 0.75rem;
+  }
+  .data-riwayat {
+    grid-template-columns: 1fr 20% 20%;
+    grid-template-rows: 2fr;
+    row-gap: 0.25rem;
+  }
+  .data-riwayat p:nth-child(3) {
+    grid-column: 1/2;
+    grid-row: 2/3;
+    justify-self: flex-start;
+  }
+  input {
+    background-color: var(--dasar);
+    box-shadow: none;
+  }
+  .ico {
+    color: darkgray;
+  }
+  input::placeholder {
+    color: darkgray;
+  }
+  input:focus {
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 5px 15px;
+  }
+  input:focus + .ico {
+    color: darkgray;
+  }
+  input:focus + .ico + .ico.right {
+    color: darkgray;
+  }
+  .button-save {
+    padding: 0 40% 0 40%;
+  }
+  #form .w-label:nth-child(2),
+  #form .w-label:nth-child(3) {
+    width: 100%;
+  }
+  .drop-select {
+    position: fixed;
+    padding-left: 1rem;
+    border-radius: 0;
+    height: 100%;
+    max-height: 100vh;
+    top: 100vh;
+    min-height: 100vh;
+  }
+  .drop-select.active {
+    max-height: 100vh;
+  }
+  @keyframes dropAnim {
+    from {
+      top: 100vh;
     }
-    setTimeout(() => {
-      customAlert.removeChild(alertElement);
-      alertCount--;
-    }, 300);
+    to {
+      top: 0;
+    }
   }
-});
+  .drop-select .header {
+    display: flex;
+  }
+  .drop-select .header + .form-container {
+    display: block;
+  }
+  .drop-select .header i {
+    position: absolute;
+    left: 1rem;
+    top: auto;
+    cursor: pointer;
+  }
+  .drop-select p {
+    padding: 0.5rem 0;
+  }
+  .alert {
+    right: 1.5rem;
+    transform: none;
+  }
+  .data-content {
+    padding-top: 0;
+  }
+  .header-content {
+    display: none;
+  }
+  .data-siswa {
+    grid-template-columns: calc(80% - 0.5rem) 20%;
+    grid-template-rows: 2fr;
+  }
+  .data-siswa p:nth-child(2) {
+    display: none;
+  }
+  .data-siswa p:first-child {
+    grid-column: 1/2;
+    grid-row: 1/2;
+  }
+  .data-siswa p:nth-child(3) {
+    grid-column: 1/2;
+    grid-row: 2/3;
+  }
+  .data-siswa span {
+    grid-column: 2/3;
+    grid-row: 1/3;
+  }
+  .body-content .data-siswa::after {
+    left: -1.5rem;
+    width: calc(100% + 3rem);
+  }
+}
+@media screen and (min-width: 1024px) {
+  .top-bar {
+    background-color: white;
+    backdrop-filter: none;
+  }
+  .top-bar.scroll {
+    background-color: white;
+    backdrop-filter: none;
+  }
+  .line-bar {
+    display: flex;
+  }
+  .navbar {
+    height: calc(100vh - 64px); /* Mengatur tinggi navbar sesuai viewport */
+    width: 20%;
+    top: 64px;
+    padding: 1rem;
+    padding-top: 0;
+    flex-direction: column;
+  }
+  .navbar.active {
+    width: 5%;
+    padding: 0 0.3rem;
+  }
+  .navbar.active .nav-base {
+    width: auto;
+  }
+  .navbar .nav-base {
+    justify-content: flex-start;
+    padding: 0.75rem;
+    border-radius: 15px;
+    margin: 0.55rem 0;
+    width: 100%;
+  }
+  .navbar .nav-base.active {
+    background-color: var(--utama);
+    color: white;
+  }
+  .navbar .nav-base .text-menu {
+    display: block;
+    max-width: fit-content;
+    transition: opacity 0.25s ease, max-width 0.2s ease, margin-left 0.2s ease,
+      visibility 0.2s;
+  }
+  .navbar.active .nav-base .text-menu {
+    opacity: 0;
+    max-width: 0;
+    margin-left: 0;
+    visibility: hidden;
+  }
+  .navbar .nav-base::before {
+    top: 0;
+    left: 0;
+    transform: none;
+    width: 0;
+    height: 100%;
+    border-radius: 15px;
+    background-color: var(--utama);
+    opacity: 1;
+  }
+  .navbar .nav-base:hover::before {
+    width: 100%;
+    opacity: 1;
+  }
+  .navbar .nav-base.active:hover:before {
+    width: 100%;
+    opacity: 0;
+  }
+  .navbar .nav-base.active:before {
+    width: 100%;
+    opacity: 0;
+  }
+  .main {
+    padding-top: calc(64px + 1rem);
+    margin-left: 20%;
+  }
+  .main-page {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-bottom: 1rem;
+  }
+  .main.active {
+    margin-left: 5%;
+  }
+  .btn-fab {
+    right: 2rem;
+    bottom: 2rem;
+  }
+  .btn-fab:nth-child(2) {
+    right: calc(2rem + 5px);
+    bottom: calc(2rem + 5px);
+  }
+  .btn-fab:nth-child(2).active {
+    bottom: calc(3rem + 55px);
+  }
+  .modal {
+    display: flex;
+  }
+  .modal-card {
+    border-radius: 25px;
+    width: 80%;
+    height: 80vh;
+    min-height: 80vh;
+    overflow-y: auto;
+    transform: scale(0);
+  }
+  .modal-card::before {
+    display: none;
+  }
+  .modal-content {
+    grid-template-columns: 25% 25% 50%;
+    grid-template-rows: 1fr;
+    padding: 1rem;
+    gap: 0;
+  }
+  .modal-header {
+    padding: 0.25rem 0;
+    padding-bottom: 0.25rem;
+  }
+  .modal-footer {
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+  }
+  .close-modal {
+    width: calc(100vh / 35);
+    height: calc(100vh / 35);
+  }
+  .modal-card.side {
+    opacity: 0;
+    width: 40%;
+    margin-left: auto;
+    border-radius: 25px 0 0 25px;
+    min-height: 100vh;
+    transform: translateX(100vw);
+    overflow-y: auto;
+  }
+  .modal-card.side.active {
+    transform: translateX(0);
+  }
+  .topic-content {
+    padding-left: 1rem;
+    padding-right: 0.5rem;
+  }
+  .data-riwayat {
+    grid-template-columns: 1fr 20% 1fr 10%;
+    grid-template-rows: 1fr;
+  }
+  .data-riwayat p:nth-child(3) {
+    grid-column: 3/4;
+    grid-row: 1/2;
+    justify-self: flex-end;
+  }
+  input {
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 3px 8px;
+  }
+  .ico {
+    color: black;
+  }
+  input::placeholder {
+    color: lightgray;
+  }
+  input:focus {
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.13) 0px 5px 15px;
+  }
+  input:focus + .ico {
+    color: lightgray;
+  }
+  input:focus + .ico + .ico.right {
+    color: lightgray;
+  }
+  .button-save {
+    padding: 0 40% 0 40%;
+  }
+  #form .w-label:nth-child(2),
+  #form .w-label:nth-child(3) {
+    width: calc(50% - 1rem);
+  }
+  #form-extra .w-label:nth-child(2),
+  #form-extra .w-label:nth-child(3),
+  #form-extra .w-label:nth-child(4),
+  #form-extra .w-label:nth-child(5),
+  #form-extra .w-label:nth-child(6),
+  #form-extra .w-label:nth-child(7),
+  #form-extra .w-label:nth-child(8),
+  #form-extra .w-label:nth-child(9),
+  #form-extra .w-label:nth-child(10),
+  #form-extra .w-label:nth-child(11),
+  #form-extra .w-label:nth-child(12),
+  #form-extra .w-label:nth-child(13),
+  #form-extra .w-label:nth-child(14),
+  #form-extra .w-label:nth-child(15),
+  #form-extra .w-label:nth-child(16),
+  #form-extra .w-label:nth-child(17) {
+    width: calc(50% - 1rem);
+  }
+  .drop-select {
+    position: absolute;
+    padding-left: 2.5rem;
+    border-radius: 25px;
+    height: auto;
+    min-height: 0;
+    max-height: 0;
+    top: calc(0.7rem * 4);
+  }
+  .drop-select.active {
+    max-height: 30vh;
+  }
+  @keyframes dropAnim {
+    from {
+      top: 4.5rem;
+    }
+    to {
+      top: 4.5rem;
+    }
+  }
+  .drop-select .header {
+    display: none;
+  }
+  .drop-select .header + .form-container {
+    display: none;
+  }
+  .drop-select p {
+    padding: 0.25rem 0;
+  }
+  .alert {
+    right: 1.5rem;
+    transform: none;
+  }
+  .data-content {
+    padding-top: 1rem;
+  }
+  .header-content {
+    display: grid;
+  }
+  .data-siswa {
+    grid-template-rows: 1fr;
+    grid-template-columns: calc(40% - 0.5rem) 20% 25% 15%;
+  }
+  .body-content .data-siswa::after {
+    left: 0;
+    width: 100%;
+  }
+}
