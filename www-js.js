@@ -110,6 +110,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // Kemudian konten yang sesuai ditampilkan
     const contentElement = document.getElementById("content-" + id);
     if (contentElement) {
+      console.log("ada Halaman")
       contentElement.style.display = "block";
       setTimeout(() => {
         const fabBtnSecondChild = contentElement.querySelector(
@@ -119,6 +120,8 @@ document.addEventListener("DOMContentLoaded", () => {
           fabBtnSecondChild.classList.add("active");
         }
       }, 50);
+    } else {
+      console.log("tidak ada halaman");
     }
   }
 
