@@ -95,7 +95,6 @@ navBases.forEach(function (navBase) {
 function showContent(id) {
   const allContents = document.querySelectorAll(".main-page > div");
   allContents.forEach((content) => {
-    console.log(`Hiding content: ${content.id}`);
     content.style.display = "none";
     const fabBtnSecondChild = content.querySelectorAll(".btn-fab:nth-child(2)");
     fabBtnSecondChild.forEach((fabBtn) => {
@@ -108,10 +107,7 @@ function showContent(id) {
   // Menampilkan konten yang sesuai
   const contentElement = document.getElementById("konten-" + id);
   if (contentElement) {
-    console.log(`Showing content: ${contentElement.id}`);
     contentElement.style.display = "block";
-    console.log('After setting block:', getComputedStyle(contentElement).display);
-    
     setTimeout(() => {
       const fabBtnSecondChild = contentElement.querySelector(".btn-fab:nth-child(2)");
       if (fabBtnSecondChild) {
