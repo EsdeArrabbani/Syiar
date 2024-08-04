@@ -35,10 +35,6 @@ const modalSide = document.getElementById("modal-history");
 const riwayatHeader = document.querySelectorAll(".topic-history");
 const buttonAll = document.querySelectorAll(".btn.full");
 const card_el = document.querySelectorAll(".modal-card");
-const namaSiswaSpp = document.getElementById("nama-siswa-spp");
-const namaSiswaBuku = document.getElementById("nama-siswa-buku");
-const namaSiswaBaju = document.getElementById("nama-siswa-baju");
-const namaSiswaKegiatan = document.getElementById("nama-siswa-kegiatan");
 const namaPesanBuku = document.getElementById("nama-pesan-buku");
 const namaPesanBaju = document.getElementById("nama-pesan-baju");
 const dropSelectSPP = document.getElementById("cari-drop-select-spp");
@@ -48,13 +44,21 @@ const dropSelectKegiatan = document.getElementById("cari-drop-select-kegiatan");
 const dropPesanBuku = document.getElementById("cari-drop-pesan-buku");
 const dropPesanBaju = document.getElementById("cari-drop-pesan-baju");
 const allDropSelect = document.querySelectorAll(".drop-select");
+const inputBulanSPP = document.getElementById("bulan-spp");
+const namaSiswaSpp = document.getElementById("nama-siswa-spp");
+const namaSiswaBuku = document.getElementById("nama-siswa-buku");
+const namaSiswaBaju = document.getElementById("nama-siswa-baju");
+const namaSiswaKegiatan = document.getElementById("nama-siswa-kegiatan");
 const listNamaSiswa = document.querySelectorAll(".drop-select p");
+const allInputs = document.querySelectorAll('input:not([type="date"])');
 const sppCheckBox = document.querySelectorAll(
   "#chip-spp input[type='checkbox']"
 );
+const currencyInputs = document.querySelectorAll("input[data-type='currency']");
 const selectiveInput = document.querySelectorAll(
   "input[data-type='selective']"
 );
+const inputDates = document.querySelectorAll(".tanggal");
 const widthVW = window.innerWidth;
 const noResultsMessage = document.createElement("p");
 const namaDropSiswaSPP = dropSelectSPP.closest(".drop-select");
@@ -70,18 +74,6 @@ const year = today.getFullYear();
 const month = String(today.getMonth() + 1).padStart(2, "0"); // Ingat bahwa bulan dimulai dari 0 (Januari adalah bulan 0)
 const day = String(today.getDate()).padStart(2, "0"); // PadStart untuk menambahkan '0' jika hanya satu digit
 const formattedDate = `${year}-${month}-${day}`;
-
- //Splash Screen
-  function splashOn() {
-    const splashScreen = document.querySelector(".splash-screen");
-    setTimeout(() => {
-      splashScreen.classList.add("remove");
-      setTimeout(() => {
-        splashScreen.style.display = "none";
-      }, 1000);
-    }, 2000);
-  }
-  splashOn();
 
 document.addEventListener("DOMContentLoaded", () => {
   //Navbar
@@ -145,6 +137,18 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
+  //Splash Screen
+  function splashOn() {
+    const splashScreen = document.querySelector(".splash-screen");
+    setTimeout(() => {
+      splashScreen.classList.add("remove");
+      setTimeout(() => {
+        splashScreen.style.display = "none";
+      }, 1000);
+    }, 2000);
+  }
+  splashOn();
+
   //Main
   // fungsi mencari nama siswa di dalam page
   function SearchItems(event, start) {
@@ -194,7 +198,29 @@ document.addEventListener("DOMContentLoaded", () => {
   fabModal(btn_tambahBaju, TambahBaju);
   fabModal(btn_bayarKegiatan, bayarKegiatan);
   fabModal(btnHistory, modalSide);
-  
+
+  const modalSpp = document.getElementById("modal-spp");
+  const searchSpp = document.getElementById("pencarian-spp");
+  //Modal Function
+  // fungsi membuka modal detail tagihan
+  function openModalBox(event, target) {
+    const boxModal = event.querySelectorAll(".data-siswa");
+    boxModal.forEach((item) => {
+      item.addEventListener("click", () => {
+        modal.classList.add("active");
+        target.classList.remove("non");
+        setTimeout(() => {
+          target.classList.add("active");
+        }, 50);
+        document.body.classList.add("modal-open");
+      });
+    });
+  }
+  openModalBox(searchSpp, modalSpp);
+  openModalBox(searchBuku, modalBuku);
+  openModalBox(searchBaju, modalBaju);
+  openModalBox(searchKegiatan, modalKegiatan);
+
   function tutupModals() {
     modal.classList.remove("active");
     modalSpp.classList.remove("active");
@@ -221,7 +247,7 @@ document.addEventListener("DOMContentLoaded", () => {
     modalSide.classList.add("non");
     allDropSelect.forEach((e) => e.classList.remove("active"));
     document.body.classList.remove("modal-open");
-    AllInputs.forEach((el) => {
+    allInputs.forEach((el) => {
       el.checked = false;
       el.value = "";
     });
@@ -295,54 +321,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  //Dropdown Function
-  // fungsi mengeklik pagination pada topic
-  function paginationTopic(element) {
-    const topicPage = document.querySelectorAll(`.topic-page.${element}`);
-    topicPage.forEach((tp) => {
-      tp.addEventListener("click", () => {
-        const tpItem = tp.classList.contains(element);
-        topicPage.forEach((item) => {
-          if (item.classList.contains(element)) {
-            item.classList.remove("active");
-            console.log(item);
-          }
-        });
-        if (tpItem) {
-          tp.classList.add("active");
-        }
-        showContentPagination(tp.id, element);
-
-        window.scrollTo({
-          top: 0,
-          behavior: "instant",
-        });
-      });
-    });
-  }
-
-  // Fungsi untuk menampilkan konten yang sesuai dengan id
-  function showContentPagination(id, el) {
-    const allContentPages = document.querySelectorAll(
-      ".topic-content > .data-content"
-    );
-
-    allContentPages.forEach((content) => {
-      if (content.classList.contains(el)) {
-        content.style.display = "none";
-      }
-    });
-    const contentPageElement = document.getElementById("content-" + id);
-    if (contentPageElement) {
-      contentPageElement.style.display = "block";
-    }
-  }
-
-  // Panggil fungsi untuk 'spp' dan 'keg'
-  paginationTopic("spp");
-  paginationTopic("keg");
-  paginationTopic("buku");
-  paginationTopic("baju");
+  
 
   //Formulir Function
 
@@ -400,6 +379,35 @@ document.addEventListener("DOMContentLoaded", () => {
   filterItems(dropPesanBaju, namaDropPesanBaju);
   filterItems(namaSiswaKegiatan, namaDataSiswa[5]);
   filterItems(dropSelectKegiatan, namaDropSiswaKegiatan);
+
+  // Fungsi mengeklik nama dan memindahkannya pada dropdown ke input (semuanya)
+  function inputNama(event, target) {
+    target.forEach((e) => {
+      e.addEventListener("click", () => {
+        event.value = e.textContent;
+        if (widthVW < 1024) {
+          const formModal = e.closest(".form");
+          const modalCard = formModal.closest(".modal-card.active");
+          if (formModal && modalCard) {
+            modalCard.style.transform = "translateY(35vh)";
+            formModal.style.transform = "translateX(-1rem)";
+            e.closest(".drop-select").classList.remove("active");
+            modal.style.overflow = "";
+          }
+        } else {
+          e.closest(".drop-select").classList.remove("active");
+          modal.style.overflow = "";
+        }
+        sendValue();
+      });
+    });
+  }
+  inputNama(namaSiswaSpp, listNamaSiswa);
+  inputNama(namaSiswaBuku, listNamaSiswa);
+  inputNama(namaPesanBuku, listNamaSiswa);
+  inputNama(namaSiswaBaju, listNamaSiswa);
+  inputNama(namaPesanBaju, listNamaSiswa);
+  inputNama(namaSiswaKegiatan, listNamaSiswa);
 
   // Fungsi tutup dropdown (semuanya)
 
@@ -460,7 +468,7 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     }
   });
-  
+
   //Alert Function
   const customAlert = document.getElementById("customAlert");
 
