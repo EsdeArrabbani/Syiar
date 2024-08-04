@@ -1,4 +1,3 @@
-document.addEventListener("DOMContentLoaded", () => {
 const navBases = document.querySelectorAll(".nav-base");
 const btn_bayarSPP = document.querySelector("#btn-bayar-spp");
 const btn_bayarBuku = document.querySelector("#btn-bayar-buku");
@@ -76,7 +75,82 @@ const month = String(today.getMonth() + 1).padStart(2, "0"); // Ingat bahwa bula
 const day = String(today.getDate()).padStart(2, "0"); // PadStart untuk menambahkan '0' jika hanya satu digit
 const formattedDate = `${year}-${month}-${day}`;
 
-  // Fungsi mencari nama siswa di dalam page
+document.addEventListener("DOMContentLoaded", () => {
+  //Navbar
+  // Tambahkan event listener untuk setiap nav-base
+  navBases.forEach(function (navBase) {
+    navBase.addEventListener("click", () => {
+      navBases.forEach((item) => {
+        item.classList.remove("active");
+      });
+      navBase.classList.add("active");
+      showContent(navBase.id);
+      window.scrollTo({
+        top: 0,
+        behavior: "instant", // Pilihan "smooth" membuat scroll menjadi halus
+      });
+    });
+  });
+
+  // Fungsi untuk menampilkan konten yang sesuai dengan id
+  function showContent(id) {
+    const allContents = document.querySelectorAll(".main-page > div");
+    allContents.forEach((content) => {
+      content.style.display = "none";
+      const fabBtnSecondChild = content.querySelectorAll(
+        ".btn-fab:nth-child(2)"
+      );
+      fabBtnSecondChild.forEach((fabBtn) => {
+        if (fabBtn) {
+          fabBtn.classList.remove("active");
+        }
+      });
+    });
+
+    // Kemudian konten yang sesuai ditampilkan
+    const contentElement = document.getElementById("content-" + id);
+    if (contentElement) {
+      contentElement.style.display = "block";
+      setTimeout(() => {
+        const fabBtnSecondChild = contentElement.querySelector(
+          ".btn-fab:nth-child(2)"
+        );
+        if (fabBtnSecondChild) {
+          fabBtnSecondChild.classList.add("active");
+        }
+      }, 50);
+    }
+  }
+
+  menu.addEventListener("click", function () {
+    this.classList.toggle("active");
+    nav.classList.toggle("active");
+    main.classList.toggle("active");
+  });
+
+  //Topbar
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 0) {
+      topBar.classList.add("scroll");
+    } else {
+      topBar.classList.remove("scroll");
+    }
+  });
+
+  //Splash Screen
+  function splashOn() {
+    const splashScreen = document.querySelector(".splash-screen");
+    setTimeout(() => {
+      splashScreen.classList.add("remove");
+      setTimeout(() => {
+        splashScreen.style.display = "none";
+      }, 1000);
+    }, 2000);
+  }
+  splashOn();
+
+  //Main
+  // fungsi mencari nama siswa di dalam page
   function SearchItems(event, start) {
     event.addEventListener("input", function () {
       start.appendChild(noResultsMessage);
@@ -100,13 +174,10 @@ const formattedDate = `${year}-${month}-${day}`;
       }
     });
   }
-
-  // Pastikan variabel dideklarasikan sebelum digunakan
   SearchItems(pencarianSpp, searchSpp);
   SearchItems(pencarianBuku, searchBuku);
   SearchItems(pencarianBaju, searchBaju);
   SearchItems(pencarianKegiatan, searchKegiatan);
-});
 
   //Fab Button
   function fabModal(event, target) {
@@ -129,7 +200,6 @@ const formattedDate = `${year}-${month}-${day}`;
   fabModal(btnHistory, modalSide);
 
   const modalSpp = document.getElementById("modal-spp");
-  const searchSpp = document.getElementById("pencarian-spp");
   //Modal Function
   // fungsi membuka modal detail tagihan
   function openModalBox(event, target) {
@@ -249,8 +319,6 @@ const formattedDate = `${year}-${month}-${day}`;
       }
     });
   });
-
-  
 
   //Formulir Function
 
