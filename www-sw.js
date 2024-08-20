@@ -1,15 +1,15 @@
 const CACHE_NAME = 'my-cache-v1';
 const urlsToCache = [
-  "/public/images/atm.jpg",
-  "/public/images/mobile/bangunan.jpg",
-  "/public/images/mobile/infak.jpg",
-  "/public/images/mobile/integral.png",
-  "/public/images/mobile/pembangunan.jpg",
-  "/public/images/mobile/rencanabangunan.jpg",
-  "/public/images/mobile/splash.png",
-  "/public/images/mobile/tagihan.jpg",
-  "/public/images/mobile/pp.png",
-  "/public/images/mobile/header.png",
+  "/Syiar/public/images/atm.jpg",
+  "/Syiar/public/images/mobile/bangunan.jpg",
+  "/Syiar/public/images/mobile/infak.jpg",
+  "/Syiar/public/images/mobile/integral.png",
+  "/Syiar/public/images/mobile/pembangunan.jpg",
+  "/Syiar/public/images/mobile/rencanabangunan.jpg",
+  "/Syiar/public/images/mobile/splash.png",
+  "/Syiar/public/images/mobile/tagihan.jpg",
+  "/Syiar/public/images/mobile/pp.png",
+  "/Syiar/public/images/mobile/header.png",
 ];
 
 self.addEventListener('install', (event) => {
