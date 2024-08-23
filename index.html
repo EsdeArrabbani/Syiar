@@ -1291,7 +1291,7 @@
   <script>
     if ('serviceWorker' in navigator) {
   window.addEventListener('load', function() {
-    navigator.serviceWorker.register('Syiar/service-wr.js', {
+    navigator.serviceWorker.register('/service-wr.js', {
       scope: '/' // Scope harus disesuaikan jika Anda ingin kontrol penuh atau sebagian
     })
     .catch(function(error) {
