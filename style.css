@@ -643,7 +643,7 @@ main.active + footer {
   text-shadow: 1px 5px 5px rgba(0, 0, 0, 0.5);
 }
 .swiper-slide[aria-label="1 / 3"] {
-  background-image: url("public/images/mobile/tagihan.jpg");
+  background-image: url("public/images/tagihan.jpg");
 }
 .swiper-slide[aria-label="1 / 3"] p,
 .swiper-slide[aria-label="1 / 3"] h1 {
@@ -660,7 +660,7 @@ main.active + footer {
   transform: translate(0, 0);
 }
 .swiper-slide[aria-label="3 / 3"] {
-  background-image: url("public/images/mobile/infak.jpg");
+  background-image: url("public/images/infak.jpg");
 }
 .swiper-slide[aria-label="3 / 3"] h3,
 .swiper-slide[aria-label="3 / 3"] h1,
@@ -685,7 +685,7 @@ main.active + footer {
   transform: translate(0, 0);
 }
 .swiper-slide[aria-label="2 / 3"] {
-  background-image: url("public/images/mobile/pembangunan.jpg");
+  background-image: url("public/images/pembangunan.jpg");
 }
 .swiper-slide[aria-label="2 / 3"] h1,
 .swiper-slide[aria-label="2 / 3"] p,
