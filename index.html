@@ -2133,7 +2133,7 @@ const NamaInput = document.getElementById("nama-input"),
             // Tampilkan pesan kesalahan kepada pengguna, jika perlu
         }
     }
-    // const urlProxy = "https://cors-anywhere.herokuapp.com/";
+    const urlProxy = "http://crossorigin.me";
     async function kirimData() {
     const data = {
         id: id,
@@ -2154,9 +2154,8 @@ const NamaInput = document.getElementById("nama-input"),
     };
 
     try {
-        const response = await fetch(DATA_URL, {
-            method: 'POST',
-            mode: 'no-cors',
+        const response = await fetch(urlProxy + DATA_URL, {
+            method: 'POST,
             headers: {
                 'Content-Type': 'application/json'
             },
