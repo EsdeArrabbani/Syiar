@@ -1,0 +1,2435 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tagihan Siswa Ar-Rabbani Ananda</title>
+    <link rel="icon" href="public/images/mobile/logo.png" type="image/x-icon">
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link href="https://cdn.jsdelivr.net/npm/mc-datepicker/dist/mc-calendar.min.css" rel="stylesheet" />  
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="over.css">
+    <link rel="stylesheet" type="text/css" href="extra.css">
+    <style>
+    </style>
+  </head>
+  <div id="overlay" class="overlay">
+    <img src="public/images/mobile/splash.png" alt="" />
+  </div>
+  <body>
+    
+    <navbar id="nav">
+      <div class="logo">
+        <img
+          src="public/images/mobile/integral.png"
+          alt=""
+        />
+        <div class="text-logo">
+          <img src="public/images/mobile/header.png" alt="">
+        </div>
+      </div>
+      <div class="tittle-profile">
+        <h2 id="ananda" class="tebal"></h2>
+      </div>
+      <div class="profile">
+        <div id="btn-pp" class="pp"></div>
+      </div>
+    </navbar>
+    <div id="customAlert"></div>
+    <div id="modal" class="modal">
+      <div id="modal-pp" class="zoom-pp non">
+        <img id="img-modal-pp"
+        class="modal-pp"
+        src="https://esdearrabbani.github.io/Syiar/public/pp/99.jpg"
+        />
+        <div id="close-pp" class="tutup-pp">
+          <span class="line"></span>
+          <span class="line"></span>
+        </div>
+      </div>
+      <div id="modal-spp" class="modal-card non">
+        <div class="modal-header">
+          <h3 class="sedang">Detail Tagihan SPP</h3>
+          <div class="close">
+            <span class="line"></span>
+            <span class="line"></span>
+          </div>
+        </div>
+        <div class="modal-body">
+          <div class="detail-card mod-spp">
+            <div class="detail-body">
+              <p id="Juli" class="tunggakan">Juli</p>
+              <span class="btn penjelasan">Belum dibayar</span>
+            </div>
+            <p class="sedang jumlah">Rp. 10.000.000</p>
+          </div>
+          <div class="detail-card mod-spp">
+            <div class="detail-body">
+              <p id="Agustus" class="tunggakan">Agustus</p>
+              <span class="btn penjelasan">Belum dibayar</span>
+            </div>
+            <p class="sedang jumlah">Rp. 10.000.000</p>
+          </div>
+          <div class="detail-card mod-spp">
+            <div class="detail-body">
+              <p id="September" class="tunggakan">September</p>
+              <span class="btn penjelasan">Belum dibayar</span>
+            </div>
+            <p class="sedang jumlah">Rp. 10.000.000</p>
+          </div>
+          <div class="detail-card mod-spp">
+            <div class="detail-body">
+              <p id="Oktober" class="tunggakan">Oktober</p>
+              <span class="btn penjelasan">Belum dibayar</span>
+            </div>
+            <p class="sedang jumlah">Rp. 10.000.000</p>
+          </div>
+          <div class="detail-card mod-spp">
+            <div class="detail-body">
+              <p id="November" class="tunggakan">November</p>
+              <span class="btn penjelasan">Belum dibayar</span>
+            </div>
+            <p class="sedang jumlah">Rp. 10.000.000</p>
+          </div>
+          <div class="detail-card mod-spp">
+            <div class="detail-body">
+              <p id="Desember" class="tunggakan">Desember</p>
+              <span class="btn penjelasan">Belum dibayar</span>
+            </div>
+            <p class="sedang jumlah">Rp. 10.000.000</p>
+          </div>
+          <div class="detail-card mod-spp">
+            <div class="detail-body">
+              <p id="Januari" class="tunggakan">Januari</p>
+              <span class="btn penjelasan">Lunas</span>
+            </div>
+            <p class="sedang jumlah">Rp. 10.000.000</p>
+          </div>
+          <div class="detail-card mod-spp">
+            <div class="detail-body">
+              <p id="Februari" class="tunggakan">Februari</p>
+              <span class="btn  penjelasan">Kurang</span>
+            </div>
+            <p class="sedang jumlah">Rp. 10.000.000</p>
+          </div>
+          <div class="detail-card mod-spp">
+            <div class="detail-body">
+              <p id="Maret" class="tunggakan">Maret</p>
+              <span class="btn penjelasan">Kurang</span>
+            </div>
+            <p class="sedang jumlah">Rp. 10.000.000</p>
+          </div>
+          <div class="detail-card mod-spp">
+            <div class="detail-body">
+              <p id="April" class="tunggakan">April</p>
+              <span class="btn penjelasan">Belum dibayar</span>
+            </div>
+            <p class="sedang jumlah">Rp. 10.000.000</p>
+          </div>
+          <div class="detail-card mod-spp">
+            <div class="detail-body">
+              <p id="Mei" class="tunggakan">Mei</p>
+              <span class="btn penjelasan">Belum dibayar</span>
+            </div>
+            <p class="sedang jumlah">Rp. 10.000.000</p>
+          </div>
+          <div class="detail-card mod-spp">
+            <div class="detail-body">
+              <p id="Juni" class="tunggakan">Juni</p>
+              <span class="btn penjelasan">Belum dibayar</span>
+            </div>
+            <p class="sedang jumlah">Rp. 10.000.000</p>
+          </div>
+          <div class="detail-card mod-spp">
+            <div class="detail-body">
+              <p id="modalspp-Sebelumnya" class="tunggakan">Tahun Ajaran Sebelumnya</p>
+              <span class="btn penjelasan">Belum dibayar</span>
+            </div>
+            <p class="sedang jumlah">Rp. 10.000.000</p>
+          </div>
+        </div>
+        <div class="detail-total">
+          <h3 class="sedang">Total</h3>
+          <h3 id="total-spp-all" class="sedang">Rp. 10.000.000</h3>
+        </div>
+      </div>
+      <div id="modal-kegiatan" class="modal-card non">
+        <div class="modal-header">
+          <h3 class="sedang">Detail Tagihan Biaya Kegiatan</h3>
+          <div class="close">
+            <span class="line"></span>
+            <span class="line"></span>
+          </div>
+        </div>
+        <div class="modal-body">
+          <div class="detail-card mod-keg">
+            <div class="detail-body">
+              <p id="Ganjil" class="tunggakan">Semester Ganjil</p>
+              <span class="btn penjelasan">Lunas</span>
+            </div>
+            <p class="sedang jumlah">Rp. 10.000.000</p>
+          </div>
+          <div class="detail-card mod-keg">
+            <div class="detail-body">
+              <p id="Genap" class="tunggakan">Semester Genap</p>
+              <span class="btn penjelasan">Kurang</span>
+            </div>
+            <p class="sedang jumlah">Rp. 10.000.000</p>
+          </div>
+          <div class="detail-card mod-keg">
+            <div class="detail-body">
+              <p id="modalkeg-Sebelumnya" class="tunggakan">Tahun Ajaran Sebelumnya</p>
+              <span class="btn penjelasan">Belum dibayar</span>
+            </div>
+            <p class="sedang jumlah">Rp. 10.000.000</p>
+          </div>
+        </div>
+        <div class="detail-total">
+          <h3 class="sedang">Total</h3>
+          <h3 id="total-keg-all" class="sedang">Rp. 10.000.000</h3>
+        </div>
+      </div>
+      <div id="modal-donasi" class="modal-card non">
+        <div class="modal-header">
+          <h3 class="sedang">Bantuan Donasi Pembagunan</h3>
+          <div class="close">
+            <span class="line"></span>
+            <span class="line"></span>
+          </div>
+        </div>
+        <div class="modal-body">
+          <div class="donasi-header">
+            <div class="donasi-content">
+              <div class="bangunan mr">
+                <h3 class="status-kerjaan sedang">Pengerjaan Bangunan</h3>
+                <div class="img-donasi">
+                  <div class="post-donasi"></div>
+                </div>
+              </div>
+            </div>
+            <div class="donasi-content">
+              <div class="bangunan ml">
+                <h3 class="status-kerjaan sedang">Rencana Bangunan</h3>
+                <div class="img-donasi">
+                  <div class="post-donasi"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="donasi-body">
+            <h3 class="sedang">Kebutuhan Material Cor Dak Beton</h3>
+            <div class="donasi-kebutuhan">
+              <p><b>Semen</b> 250 Sak @ 75.000,-</p>
+              <p><b>Pasir</b></Pasir> 14 m3 @ 100.000,-</p>
+              <p><b>Batu Pecah</b> 21 m3 @ 550.000,-</p>
+              <p><b>Besi</b> 5642 kh @ 17.000,-</p>
+              <p><b>Plywood</b> 9ml 7 lbr @ 220.000,-</p>
+              <p><b>Donasi bisa berupa bahan bangunan</b></p>
+            </div>
+          </div>
+          <div class="donasi"> 
+            <div class="paket">
+                <h1 class="header khusus sedang">Paket 1</h1>
+                <div class="body">
+                    <p>@Rp. 150.000,-</p>
+                </div>
+                <a id="paket1" href="#" class="btn2 btn-utama">Pilih Paket</a>
+            </div>
+            <div class="paket">
+                <h1 class="header khusus sedang">Paket 2</h1>
+                <div class="body">
+                    <p>@Rp. 200.000,-</p>
+                </div>
+                <a id="paket2" href="https://api.whatsapp.com/send?phone=6285247477356&text=*Assalamu%27alaikum%20Ustadz*,%0A%0ASaya,%20wali%20murid%20ananda%20*[Nama%20Anak]*,%20ingin%20menyampaikan%20bahwa%20kami%20sekeluarga%20berniat%20untuk%20membantu%20dalam%20proses%20pembangunan%20gedung%20sekolah.%20Kami%20memilih%20*Paket%202*%20dalam%20pembangunan%20ini.%20Mohon%20informasikan%20bagaimana%20cara%20kami%20dapat%20berkontribusi%20dalam%20proses%20pembangunan.%F0%9F%99%8F%20%0A%0ATerima%20kasih%20atas%20perhatiannya.%20*Wassalamu%27alaikum.*" class="btn2 btn-white">Pilih Paket</a>
+            </div>
+            <div class="paket">
+                <h1 class="header khusus sedang">Paket 3</h1>
+                <div class="body">
+                    <p>Opsi Lain Sesuai Kesanggupan</p>
+                </div>
+                <a id="paket3" href="https://api.whatsapp.com/send?phone=6285247477356&text=*Assalamu%27alaikum%20Ustadz*,%0A%0ASaya,%20wali%20murid%20ananda%20*[Nama%20Anak]*,%20ingin%20menyampaikan%20bahwa%20kami%20sekeluarga%20berniat%20untuk%20membantu%20dalam%20proses%20pembangunan%20gedung%20sekolah.%20Kami%20memilih%20*Paket%203*%20dalam%20pembangunan%20ini.%20Mohon%20informasikan%20bagaimana%20cara%20kami%20dapat%20berkontribusi%20dalam%20proses%20pembangunan.%F0%9F%99%8F%20%0A%0ATerima%20kasih%20atas%20perhatiannya.%20*Wassalamu%27alaikum.*" class="btn2 btn-utama">Pilih Paket</a>
+            </div>
+          </div>
+        </div>  
+      </div>
+      <div id="modal-edit" class="modal-card non">
+        <div class="modal-header">
+          <h3 class="sedang">Edit Profile Ananda</h3>
+          <div class="close">
+            <span class="line"></span>
+            <span class="line"></span>
+          </div>
+        </div>
+        <div class="modal-body">
+            <div class="form-body">
+              <div class="title-form">
+                <b>Data Pribadi</b>
+              </div>
+              <div class="form-box">
+                <p class="tag-form sedang">Nama</p>
+                <input id="nama-input" type="text" placeholder="Nama Lengkap" name="" id="">
+              </div>
+              <div class="form-box">
+                <p class="tag-form sedang">NISN</p>
+                <input id="nisn-input" type="number" name="" id="" value="0812773737" disabled>
+              </div>
+              <div class="form-box">
+                <p class="tag-form sedang">Tempat Lahir</p>
+                <input id="tempat-input" type="text" placeholder="Tempat Lahir" name="" id="">
+              </div>
+              <div class="form-box">
+                <p class="tag-form sedang">Tanggal Lahir</p>
+                <input id="tgl-input" type="text" placeholder="Tanggal Lahir" name="" id="">
+              </div>
+              <div class="form-box">
+                <p class="tag-form sedang">Nama Ayah</p>
+                <input id="ayah-input" type="text" placeholder="Nama Ayah" name="" id="">
+              </div>
+              <div class="form-box">
+                <p class="tag-form sedang">Nama Ibu</p>
+                <input id="ibu-input" type="text" placeholder="Nama Ibu" name="" id="">
+              </div>
+              <div class="title-form">
+                <b>Data Alamat</b>
+              </div>
+              <div class="form-box">
+                <p class="tag-form sedang">Alamat</p>
+                <input id="alamat-input" type="text" placeholder="Jl." name="" id="">
+              </div>
+              <div class="form-box2">
+                <p class="tag-form sedang">RT</p>
+                <input id="rt-input" type="number" placeholder="RT" name="" id="">
+              </div>
+              <div class="form-box2">
+                <p class="tag-form sedang">RW</p>
+                <input id="rw-input" type="number" placeholder="RW" name="" id="">
+              </div>
+              <div class="form-box">
+                <p class="tag-form sedang">Kelurahan</p>
+                <input id="kel-input" type="text" placeholder="Kelurahan" name="" id="">
+              </div>
+              <div class="form-box">
+                <p class="tag-form sedang">Kecamatan</p>
+                <input id="kec-input" type="text" placeholder="Kecamatan" name="" id="">
+              </div>
+              <div class="form-box">
+                <p class="tag-form sedang">Kota</p>
+                <input id="kota-input" type="text" placeholder="Kota" name="" id="">
+              </div>
+              <div class="form-box">
+                <p class="tag-form sedang">Kode Pos</p>
+                <input id="pos-input" type="number" placeholder="Kode Pos" name="" id="">
+              </div>
+              <input id="status-input" type="hidden" name="" value="Perubahan">
+              <input id="versi-input" type="hidden" name="" value="0">
+              <div class="footer-btn">
+                <p id="btn-save-profile" class="btn2 btn-utama"><i class="material-symbols-outlined">
+                  save
+                  </i>&nbsp;&nbsp;Simpan Data</p>
+              </div>
+            </div>
+        </div>
+      </div>
+    </div>
+    <div id="drop-profile" class="drop-profile">
+      <p id="btn-profile" >Profile Siswa</p>
+      <!-- <p>E-Kwitansi</p> -->
+    </div>
+    <div id="modal2" class="modal2">     
+      <div id="modal-profile" class="modal-card2">
+        <div class="header-profile">
+          <div id="btn-pp-img" class="circle-header-profile"></div>
+          <div id="close-profile" class="tutup">
+            <span class="line"></span>
+            <span class="line"></span>
+          </div>
+        </div>
+        <div class="body-profile">
+          <div class="title-body-profile">
+            <h3 class="sedang">Data Pribadi</h3>
+          </div>
+          <div class="data-body-profile">
+            <div class="kolom-data-siswa">
+              <p class="title sedang">Nama</p>
+              <p id="nama-siswa" class="data"></p>
+            </div>
+            <div class="kolom-data-siswa">
+              <p class="title sedang">NISN</p>
+              <p id="nisn-siswa" class="data"></p>
+            </div>
+            <div class="kolom-data-siswa">
+              <p class="title sedang">Tempat Lahir</p>
+              <p id="tlahir-siswa" class="data"></p>
+            </div>
+            <div class="kolom-data-siswa">
+              <p class="title sedang">Tanggal Lahir</p>
+              <p id="tgllahir-siswa" class="data"></p>
+            </div>
+            <div class="kolom-data-siswa">
+              <p class="title sedang">Nama Ayah</p>
+              <p id="ayah-siswa" class="data"></p>
+            </div>
+            <div class="kolom-data-siswa">
+              <p class="title sedang">Nama Ibu</p>
+              <p id="ibu-siswa" class="data"></p>
+            </div>
+          </div>
+        </div>
+        <div class="body-profile">
+          <div class="title-body-profile">
+            <h3 class="sedang">Data Alamat</h3>
+          </div>
+          <div class="data-body-profile">
+            <div class="kolom-data-siswa">
+              <p class="title sedang">Alamat</p>
+              <p id="alamat-siswa" class="data"></p>
+            </div>
+            <div class="kolom-data-siswa">
+              <p class="title sedang">RT/RW</p>
+              <p id="rt-siswa" class="data"></p>
+            </div>
+            <div class="kolom-data-siswa">
+              <p class="title sedang">Kelurahan</p>
+              <p id="kel-siswa" class="data"></p>
+            </div>
+            <div class="kolom-data-siswa">
+              <p class="title sedang">Kecamatan</p>
+              <p id="kec-siswa" class="data"></p>
+            </div>
+            <div class="kolom-data-siswa">
+              <p class="title sedang">Kota</p>
+              <p id="kota-siswa" class="data"></p>
+            </div>
+            <div class="kolom-data-siswa">
+              <p class="title sedang">Kode Pos</p>
+              <p id="kodepos-siswa" class="data"></p>
+            </div>
+          </div>
+        </div>
+        <div class="footer-profile">
+          <p id="btn-edit-profile" class="btn2 btn-utama"><i class="material-symbols-outlined">
+            edit
+            </i>&nbsp;&nbsp;Edit Profile</p>
+        </div>
+      </div>
+    </div>
+    <div class="skeleton">
+      <div class="grid">
+        <div class="item">
+          <div class="card one">
+            <div class="sket">
+              <div class="flex-2s p-2 w-100 h-100">
+                <div class="flex-c h-100 w-40">
+                  <div class="lines w-100 text-khusus mb-1"></div>
+                  <div class="lines w-80 text-h2 mb-1"></div>
+                  <div class="lines w-50 text-p"></div>
+                </div>
+                <div class="bx w-50 h-100 pr-1">
+                  <div class="square w-70 h-100 fr"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="card two">
+            <div class="flex-c fs p-1 w-100">
+              <div class="lines text-h2 w-70 mb-1"></div>
+              <div class="lines text-h3 w-60 mb-1"></div>
+              <div class="text-tagihan w-100">
+                <div class="flex-2s w-100 text1 mb-s2">
+                  <div class="w-33">
+                    <div class="lines text-p w-80"></div>
+                  </div>
+                  <div class="w-33">
+                    <div class="lines text-p w-60"></div>
+                  </div>
+                  <div class="w-33">
+                    <div class="lines text-p w-80 fr"></div>
+                  </div>
+                </div>
+                <div class="flex-2s w-100 text2 mb-s2">
+                  <div class="w-33">
+                    <div class="lines text-p w-80"></div>
+                  </div>
+                  <div class="w-33">
+                    <div class="lines text-p w-60"></div>
+                  </div>
+                  <div class="w-33">
+                    <div class="lines text-p w-80 fr"></div>
+                  </div>
+                </div>
+                <div class="flex-2s w-100 text3 mb-s2">
+                  <div class="w-33">
+                    <div class="lines text-p w-80"></div>
+                  </div>
+                  <div class="w-33">
+                    <div class="lines text-p w-60"></div>
+                  </div>
+                  <div class="w-33">
+                    <div class="lines text-p w-80 fr"></div>
+                  </div>
+                </div>
+                <div class="flex-2s w-100 text4 mb-s2">
+                  <div class="w-33">
+                    <div class="lines text-p w-80"></div>
+                  </div>
+                  <div class="w-33">
+                    <div class="lines text-p w-60"></div>
+                  </div>
+                  <div class="w-33">
+                    <div class="lines text-p w-80 fr"></div>
+                  </div>
+                </div>
+                <div class="flex-2s w-100 text5 mb-1">
+                  <div class="w-33">
+                    <div class="lines text-p w-80"></div>
+                  </div>
+                  <div class="w-33">
+                    <div class="lines text-p w-60"></div>
+                  </div>
+                  <div class="w-33">
+                    <div class="lines text-p w-80 fr"></div>
+                  </div>
+                </div>
+                <div class="flex-2s w-100 total mb-1">
+                  <div class="w-50">
+                    <div class="lines text-h3 w-50"></div>
+                  </div>
+                  <div class="w-50">
+                    <div class="lines text-h3 w-80 fr"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="flex-c fs p-1 w-100">
+              <div class="lines text-h2 w-70 mb-1"></div>
+              <div class="lines text-h3 w-60 mb-1"></div>
+              <div class="text-tagihan w-100">
+                <div class="flex-2s w-100 text1 mb-s2">
+                  <div class="w-33">
+                    <div class="lines text-p w-80"></div>
+                  </div>
+                  <div class="w-33">
+                    <div class="lines text-p w-60"></div>
+                  </div>
+                  <div class="w-33">
+                    <div class="lines text-p w-80 fr"></div>
+                  </div>
+                </div>
+                <div class="flex-2s w-100 text2 mb-s2">
+                  <div class="w-33">
+                    <div class="lines text-p w-80"></div>
+                  </div>
+                  <div class="w-33">
+                    <div class="lines text-p w-60"></div>
+                  </div>
+                  <div class="w-33">
+                    <div class="lines text-p w-80 fr"></div>
+                  </div>
+                </div>
+                <div class="flex-2s w-100 text3 mb-s2">
+                  <div class="w-33">
+                    <div class="lines text-p w-80"></div>
+                  </div>
+                  <div class="w-33">
+                    <div class="lines text-p w-60"></div>
+                  </div>
+                  <div class="w-33">
+                    <div class="lines text-p w-80 fr"></div>
+                  </div>
+                </div>
+                <div class="flex-2s w-100 text4 mb-s2">
+                  <div class="w-33">
+                    <div class="lines text-p w-80"></div>
+                  </div>
+                  <div class="w-33">
+                    <div class="lines text-p w-60"></div>
+                  </div>
+                  <div class="w-33">
+                    <div class="lines text-p w-80 fr"></div>
+                  </div>
+                </div>
+                <div class="flex-2s w-100 text5 mb-1">
+                  <div class="w-33">
+                    <div class="lines text-p w-80"></div>
+                  </div>
+                  <div class="w-33">
+                    <div class="lines text-p w-60"></div>
+                  </div>
+                  <div class="w-33">
+                    <div class="lines text-p w-80 fr"></div>
+                  </div>
+                </div>
+                <div class="flex-2s w-100 total mb-1">
+                  <div class="w-50">
+                    <div class="lines text-h3 w-50"></div>
+                  </div>
+                  <div class="w-50">
+                    <div class="lines text-h3 w-80 fr"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="flex-c fs p-1 w-100">
+              <div class="lines text-h2 w-70 mb-1"></div>
+              <div class="lines text-h3 w-60 mb-1"></div>
+              <div class="text-tagihan w-100">
+                <div class="flex-2s w-100 text1 mb-s2">
+                  <div class="w-33">
+                    <div class="lines text-p w-80"></div>
+                  </div>
+                  <div class="w-33">
+                    <div class="lines text-p w-60"></div>
+                  </div>
+                  <div class="w-33">
+                    <div class="lines text-p w-80 fr"></div>
+                  </div>
+                </div>
+                <div class="flex-2s w-100 text2 mb-s2">
+                  <div class="w-33">
+                    <div class="lines text-p w-80"></div>
+                  </div>
+                  <div class="w-33">
+                    <div class="lines text-p w-60"></div>
+                  </div>
+                  <div class="w-33">
+                    <div class="lines text-p w-80 fr"></div>
+                  </div>
+                </div>
+                <div class="flex-2s w-100 text3 mb-s2">
+                  <div class="w-33">
+                    <div class="lines text-p w-80"></div>
+                  </div>
+                  <div class="w-33">
+                    <div class="lines text-p w-60"></div>
+                  </div>
+                  <div class="w-33">
+                    <div class="lines text-p w-80 fr"></div>
+                  </div>
+                </div>
+                <div class="flex-2s w-100 text4 mb-s2">
+                  <div class="w-33">
+                    <div class="lines text-p w-80"></div>
+                  </div>
+                  <div class="w-33">
+                    <div class="lines text-p w-60"></div>
+                  </div>
+                  <div class="w-33">
+                    <div class="lines text-p w-80 fr"></div>
+                  </div>
+                </div>
+                <div class="flex-2s w-100 text5 mb-1">
+                  <div class="w-33">
+                    <div class="lines text-p w-80"></div>
+                  </div>
+                  <div class="w-33">
+                    <div class="lines text-p w-60"></div>
+                  </div>
+                  <div class="w-33">
+                    <div class="lines text-p w-80 fr"></div>
+                  </div>
+                </div>
+                <div class="flex-2s w-100 total mb-1">
+                  <div class="w-50">
+                    <div class="lines text-h3 w-50"></div>
+                  </div>
+                  <div class="w-50">
+                    <div class="lines text-h3 w-80 fr"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="card">
+            <div class="flex-c p-1">
+              <div class="rekening-sket">
+                <div class="square w-100 h-80 fs"></div>
+              </div>
+              <div class="lines w-80 text-p mb-1s"></div>
+              <div class="lines w-80 text-p mb-1s"></div>
+              <div class="lines w-80 text-p mb-1s"></div>
+              <div class="lines w-80 text-p mb-1s"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <main>
+      <div class="fab-wrapper">
+        <div id="fab1" class="fab">
+          <span class="fab-dot"></span>
+          <span class="fab-dot"></span>
+          <span class="fab-dot"></span>
+        </div>
+        <div class="fab-wheel">
+          <a href="https://wa.me/628112770683" class="fab-action">
+            <i class="material-symbols-outlined"> phone_in_talk </i>
+          </a>
+          <a id="walasku" href="#" class="fab-action">
+            <i class="material-symbols-outlined"> contact_phone </i>
+          </a>
+        </div>
+        <div class="fab-sub">
+          <span class="fab-alt">Hubungi bendahara</span>
+          <span class="fab-alt">Hubungi Wali Kelas</span>
+        </div>
+      </div>
+      <div class="grid">
+        <div class="item">
+          <div class="card one">
+            <div class="swiper">
+              <!-- Additional required wrapper -->
+              <div class="swiper-wrapper">
+                <!-- Slides -->
+                <div class="swiper-slide">
+                  <p class="mb-ss">Total <b class="sedang">Tagihan Ananda</b></p>
+                  <h1 id="sum-all" class="tebal khusus"></h1>
+                  <!-- <span class="material-symbols-outlined">menu</span> -->
+                </div>
+                <div class="swiper-slide">
+                  <h1 class="khusus sedang">Yuk! Bantu</h1>
+                  <p class="w-50 l-1s mb-s"> Pembangunan Sekolah Ananda</p>
+                  <a id="btn-donasi" href="#" class="btn2 btn-white">Donasi Sekarang</a>
+                </div>
+                <div class="swiper-slide">
+                  <h3 class="tebal mb-ss">Hari Jum'at</h3>
+                  <h1 class="tebal upper">Jangan Lupa</h1>
+                  <h1 class="khusus tebal upper mb-s">Infaq</h1>
+                  <span class="w-50"><b>Sempurnakan Hari</b> dengan Infaq & Sedekah</span>
+                </div>
+              </div>
+              <!-- If we need pagination -->
+              <div class="swiper-pagination"></div>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="card">
+            <h3 class="title-card sedang">Detail Tagihan Ananda</h3>
+            <h3 class="tagihan-title one biasa">
+              <span class="material-symbols-outlined mr-1">receipt_long</span
+              >Tagihan SPP
+            </h3>
+            <div class="tagihan-body">
+              <div class="tagihan-card flex-spp">
+                <p id="Juli" class="bulan">Juli</p>
+                <span class="status btn">Belum dibayar</span>
+                <p class="nominal">Rp. 5.000.000</p>
+              </div>
+              <div class="tagihan-card flex-spp">
+                <p id="Agustus" class="bulan">Agustus</p>
+                <span class="status btn">Belum dibayar</span>
+                <p class="nominal">Rp. 5.000.000</p>
+              </div>
+              <div class="tagihan-card flex-spp">
+                <p id="September" class="bulan">September</p>
+                <span class="status btn">Belum dibayar</span>
+                <p class="nominal">Rp. 5.000.000</p>
+              </div>
+              <div class="tagihan-card flex-spp">
+                <p id="Oktober" class="bulan">Oktober</p>
+                <span class="status btn">Belum dibayar</span>
+                <p class="nominal">Rp. 5.000.000</p>
+              </div>
+              <div class="tagihan-card flex-spp">
+                <p id="November" class="bulan">November</p>
+                <span class="status btn">Belum dibayar</span>
+                <p class="nominal">Rp. 5.000.000</p>
+              </div>
+              <div class="tagihan-card flex-spp">
+                <p id="Desember" class="bulan">Desember</p>
+                <span class="status btn">Belum dibayar</span>
+                <p class="nominal">Rp. 5.000.000</p>
+              </div>
+              <div class="tagihan-card flex-spp">
+                <p id="Januari" class="bulan">Januari</p>
+                <span class="status btn">Lunas</span>
+                <p class="nominal">Rp. 5.000.000</p>
+              </div>
+              <div class="tagihan-card flex-spp">
+                <p id="Februari" class="bulan">Februari</p>
+                <span class="status btn">Kurang</span>
+                <p class="nominal">Rp. 5.000.000</p>
+              </div>
+              <div class="tagihan-card flex-spp">
+                <p id="Maret" class="bulan">Maret</p>
+                <span class="status btn">Belum dibayar</span>
+                <p class="nominal">Rp. 5.000.000</p>
+              </div>
+              <div class="tagihan-card flex-spp">
+                <p id="April" class="bulan">April</p>
+                <span class="status btn">Belum dibayar</span>
+                <p class="nominal">Rp. 5.000.000</p>
+              </div>
+              <div class="tagihan-card flex-spp">
+                <p id="Mei" class="bulan">Mei</p>
+                <span class="status btn">Belum dibayar</span>
+                <p class="nominal">Rp. 5.000.000</p>
+              </div>
+              <div class="tagihan-card flex-spp">
+                <p id="Juni" class="bulan">Juni</p>
+                <span class="status btn">Belum dibayar</span>
+                <p class="nominal">Rp. 5.000.000</p>
+              </div>
+              <div class="tagihan-card flex-spp">
+                <p id="SPP-Sebelumnya" class="bulan">Tahun Ajaran Sebelumnya</p>
+                <span class="status btn">Belum dibayar</span>
+                <p class="nominal">Rp. 5.000.000</p>
+              </div>
+            </div>
+            <div class="tagihan-total">
+              <h3 class="sedang">Total</h3>
+              <p id="total-spp" class="nominal sedang">Rp. 5.000.000</p>
+            </div>
+            <a id="detail-spp" class="tagihan-detail" href="#"
+              ><span>Lihat Selengkapnya</span>
+              <span class="material-symbols-outlined">chevron_right</span></a
+            >
+            <h3 class="tagihan-title biasa">
+              <span class="material-symbols-outlined mr-1"> payments </span>
+              Tagihan Kegiatan
+            </h3>
+            <div class="tagihan-body">
+              <div class="tagihan-card flex-keg">
+                <p id="Ganjil" class="bulan">Semester Ganjil</p>
+                <span class="status btn">Lunas</span>
+                <p class="nominal">Rp. 5.000.000</p>
+              </div>
+              <div class="tagihan-card flex-keg">
+                <p id="Genap" class="bulan">Semester Genap</p>
+                <span class="status btn">Kurang</span>
+                <p class="nominal">Rp. 5.000.000</p>
+              </div>
+              <div class="tagihan-card flex-keg">
+                <p id="Keg-Sebelumnya" class="bulan">Tahun Ajaran Sebelumnya</p>
+                <span class="status btn">Belum dibayar</span>
+                <p class="nominal">Rp. 5.000.000</p>
+              </div>
+            </div>
+            <div class="tagihan-total">
+              <h3 class="sedang">Total</h3>
+              <p id="total-kegiatan" class="nominal sedang">Rp. 5.000.000</p>
+            </div>
+            <a id="detail-kegiatan" class="tagihan-detail" href="#"
+              ><span>Lihat Selengkapnya</span>
+              <span class="material-symbols-outlined">chevron_right</span></a
+            >
+            <h3 class="tagihan-title biasa">
+              <span class="material-symbols-outlined mr-1"> book_5 </span>
+              Tagihan Buku
+            </h3>
+            <div class="tagihan-body">
+              <div class="tagihan-card flex-buku">
+                <p id="B. Indo" class="bulan">B. Indo</p>
+                <span class="status btn">Lunas</span>
+                <p class="nominal">Rp. 5.000.000</p>
+              </div>
+              <div class="tagihan-card flex-buku">
+                <p id="Matematika" class="bulan">Matematika</p>
+                <span class="status btn ">Kurang</span>
+                <p class="nominal">Rp. 5.000.000</p>
+              </div>
+              <div class="tagihan-card flex-buku">
+                <p id="IPAS" class="bulan">IPAS</p>
+                <span class="status btn">Belum dibayar</span>
+                <p class="nominal">Rp. 5.000.000</p>
+              </div>
+              <div class="tagihan-card flex-buku">
+                <p id="P. Pancasila" class="bulan">Pend. Pancasila</p>
+                <span class="status btn">Belum dibayar</span>
+                <p class="nominal">Rp. 5.000.000</p>
+              </div>
+              <div class="tagihan-card flex-buku">
+                <p id="Seni Rupa" class="bulan">Seni Rupa</p>
+                <span class="status btn">Belum dibayar</span>
+                <p class="nominal">Rp. 5.000.000</p>
+              </div>
+              <div class="tagihan-card flex-buku">
+                <p id="PJOK" class="bulan">PJOK</p>
+                <span class="status btn">Belum dibayar</span>
+                <p class="nominal">Rp. 5.000.000</p>
+              </div>
+              <div class="tagihan-card flex-buku">
+                <p id="PAI" class="bulan">PAI</p>
+                <span class="status btn">Belum dibayar</span>
+                <p class="nominal">Rp. 5.000.000</p>
+              </div>
+              <div class="tagihan-card flex-buku">
+                <p id="B. Arab" class="bulan">B. Arab</p>
+                <span class="status btn">Belum dibayar</span>
+                <p class="nominal">Rp. 5.000.000</p>
+              </div>
+              <div class="tagihan-card flex-buku">
+                <p id="B. Inggris" class="bulan">B. Inggris</p>
+                <span class="status btn">Belum dibayar</span>
+                <p class="nominal">Rp. 5.000.000</p>
+              </div>
+              <div class="tagihan-card flex-buku">
+                <p id="Al-Hidayah 1" class="bulan">Al-Hidayah 1</p>
+                <span class="status btn">Belum dibayar</span>
+                <p class="nominal">Rp. 5.000.000</p>
+              </div>
+              <div class="tagihan-card flex-buku">
+                <p id="Al-Hidayah 2" class="bulan">Al-Hidayah 2</p>
+                <span class="status btn">Belum dibayar</span>
+                <p class="nominal">Rp. 5.000.000</p>
+              </div>
+              <div class="tagihan-card flex-buku">
+                <p id="Al-Hidayah 3" class="bulan">Al-hidayah 3</p>
+                <span class="status btn">Belum dibayar</span>
+                <p class="nominal">Rp. 5.000.000</p>
+              </div>
+              <div class="tagihan-card flex-buku">
+                <p id="Al-Hidayah 4" class="bulan">Al-Hidayah 4</p>
+                <span class="status btn">Belum dibayar</span>
+                <p class="nominal">Rp. 5.000.000</p>
+              </div>
+              <div class="tagihan-card flex-buku">
+                <p id="Prestasi" class="bulan">Prestasi</p>
+                <span class="status btn">Belum dibayar</span>
+                <p class="nominal">Rp. 5.000.000</p>
+              </div>
+              <div class="tagihan-card flex-buku">
+                <p id="Murojaah" class="bulan">Murojaah</p>
+                <span class="status btn">Belum dibayar</span>
+                <p class="nominal">Rp. 5.000.000</p>
+              </div>
+              <div class="tagihan-card flex-buku">
+                <p id="Tabungan" class="bulan">Tabungan</p>
+                <span class="status btn">Belum dibayar</span>
+                <p class="nominal">Rp. 5.000.000</p>
+              </div>
+              <div class="tagihan-card flex-buku">
+                <p id="Buku-Sebelumnya" class="bulan">Tahun Ajaran Sebelumnya</p>
+                <span class="status btn">Belum dibayar</span>
+                <p class="nominal">Rp. 5.000.000</p>
+              </div>
+              <div class="tagihan-card flex-buku nothing">
+                <p>Tidak ada data tagihan ananda</p>
+              </div>
+            </div>
+            <div class="tagihan-total mb-1">
+              <h3 class="sedang">Total</h3>
+              <p id="total-buku" class="nominal sedang">Rp. 5.000.000</p>
+            </div>
+            <h3 class="tagihan-title biasa">
+              <span class="material-symbols-outlined mr-1"> local_mall </span
+              >Tagihan Baju
+            </h3>
+            <div class="tagihan-body">
+              <div class="tagihan-card flex-baju">
+                <p id="Merah Putih" class="bulan">Merah Putih</p>
+                <span class="status btn">Belum dibayar</span>
+                <p class="nominal">Rp. 5.000.000</p>
+              </div>
+              <div class="tagihan-card flex-baju">
+                <p id="Batik" class="bulan">Batik</p>
+                <span class="status btn">Belum dibayar</span>
+                <p class="nominal">Rp. 5.000.000</p>
+              </div>
+              <div class="tagihan-card flex-baju">
+                <p id="Olahraga" class="bulan">Olahraga</p>
+                <span class="status btn">Belum dibayar</span>
+                <p class="nominal">Rp. 5.000.000</p>
+              </div>
+              <div class="tagihan-card flex-baju">
+                <p id="Topi" class="bulan">Topi</p>
+                <span class="status btn">Belum dibayar</span>
+                <p class="nominal">Rp. 5.000.000</p>
+              </div>
+              <div class="tagihan-card flex-baju">
+                <p id="Lambang" class="bulan">Lambang</p>
+                <span class="status btn">Belum dibayar</span>
+                <p class="nominal">Rp. 5.000.000</p>
+              </div>
+              <div class="tagihan-card flex-baju">
+                <p id="Badge Lokasi" class="bulan">Badge Lokasi</p>
+                <span class="status btn">Belum dibayar</span>
+                <p class="nominal">Rp. 5.000.000</p>
+              </div>
+              <div class="tagihan-card flex-baju">
+                <p id="Pandu" class="bulan">Pandu</p>
+                <span class="status btn">Belum dibayar</span>
+                <p class="nominal">Rp. 5.000.000</p>
+              </div>
+              <div class="tagihan-card flex-baju">
+                <p id="Biru" class="bulan">Pandu</p>
+                <span class="status btn">Belum dibayar</span>
+                <p class="nominal">Rp. 5.000.000</p>
+              </div>
+              <div class="tagihan-card flex-baju">
+                <p id="Baju-Sebelumnya" class="bulan">Tahun Ajaran Sebelumnya</p>
+                <span class="status btn">Belum dibayar</span>
+                <p class="nominal">Rp. 5.000.000</p>
+              </div>
+              <div class="tagihan-card flex-baju nothing">
+                <p>Tidak ada data tagihan ananda.</p>
+              </div>
+            </div>
+            <div class="tagihan-total mb-1">
+              <h3 class="sedang">Total</h3>
+              <p id="total-baju" class="nominal sedang">Rp. 5.000.000</p>
+            </div>
+            <h3 class="tagihan-title biasa">
+              <span class="material-symbols-outlined mr-1"> local_atm </span
+              >Tagihan Lainnya
+            </h3>
+            <div class="tagihan-body">
+              <div class="tagihan-card flex-lain">
+                <p id="Pendaftaran" class="bulan">Pendaftaran</p>
+                <span class="status btn">Belum dibayar</span>
+                <p class="nominal">Rp. 5.000.000</p>
+              </div>
+              <div class="tagihan-card flex-lain">
+                <p id="Orientasi" class="bulan">Orientasi Siswa</p>
+                <span class="status btn">Belum dibayar</span>
+                <p class="nominal">Rp. 5.000.000</p>
+              </div>
+              <div class="tagihan-card flex-lain">
+                <p id="Raport" class="bulan">Raport</p>
+                <span class="status btn">Belum dibayar</span>
+                <p class="nominal">Rp. 5.000.000</p>
+              </div>
+              <div class="tagihan-card flex-lain">
+                <p id="Gedung" class="bulan">Infak Pembangunan</p>
+                <span class="status btn">Belum dibayar</span>
+                <p class="nominal">Rp. 5.000.000</p>
+              </div>
+              <div class="tagihan-card flex-lain nothing">
+                <p>Tidak ada data tagihan ananda.</p>
+              </div>
+            </div>
+            <div class="tagihan-total mb-1">
+              <h3 class="sedang">Total</h3>
+              <p id="total-lain" class="nominal sedang">Rp. 5.000.000</p>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <h3 class="title-card two sedang">Panduan Pembayaran Tagihan</h3>
+          <div class="card">
+            <div class="rekening-card">
+              <h1 class="khusus tebal">1162079821</h1>
+              <p>A/n <b class="sedang">SD Integral Ar-Rabbani</b></p>
+              <p>Bank BPD Kaltimtara</p>
+            </div>
+            <div class="rekening-tutor">
+              <h3 class="sedang">Info Penting :</h3>
+              <table>
+                <tr>
+                  <td></td>
+                  <td>
+                    <p>Silahkan gunakan nomor rekening diatas untuk melakukan pembayaran tagihan ananda.</p>
+
+                  </td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td>
+                    <p>Pembayaran SPP dan Kegiatan paling lambat tanggal 10.</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td>
+                    <p>Untuk pembayaran uang Kegiatan bisa dianggsur setiap bulan.</p>
+                  </td>
+                </tr>
+              </table>
+            </div>
+            <div class="rekening-tutor">
+              <h4 class="sedang drop">Melalui Transfer di ATM <b class=" material-symbols-outlined">chevron_right</b></h4>
+              <div class="drop-item">
+                <table>
+                  <tr>
+                    <td></td>
+                    <td>Masukkan kartu ATM anda pada mesin ATM.</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td>Masukkan <b>PIN ATM</b> anda.</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td>Pilih menu <b>Transfer</b>.</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td>Jika anda menggunakan ATM <b></b>BPD Kaltimtara</b> maka pilih <b>Transfer Bankaltimtara</b>.</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td>Tapi jika anda menggunakan mesin ATM yang lain maka pilih <b>Transfer Antar Bank</b>.</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td>Masukkan kode bank jika dibutuhkan yaitu: <b>124</b>.</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td>Masukkan nomor rekening tujuan: <b>1162079821</b>.</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td>Masukkan nominal <b>Tagihan Ananda</b> yang akan anda bayar.</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td>Masukkan <b>PIN ATM</b> anda.</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td>Cek kembali layar untuk menlihat apakah sudah benar anda akan mengirim ke rekening atas nama <b>SD Integral Ar-Rabbani</b>.</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td>Tekan <b>Benar</b> untuk menyelesaikan transaksi.</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td>Ambil kartu ATM dan struk bukti transfer anda.</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td>Kirimkan struk bukti transfer anda bisa ke <b>bendahara</b> atau ke <b>guru kelas ananda</b>.</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td>Untuk menghubungi <b>bendahara</b> atau ke <b>guru kelas ananda</b> anda bisa mengeklik tombol berwarna hijau di pojok kanan bawah.</td>
+                  </tr>
+                </table>
+              </div>
+              <h4 class="sedang drop">Melalui Transfer di Aplikasi Mobile Banking <b class=" material-symbols-outlined">chevron_right</b></h4>
+              <div class="drop-item">
+                <table>
+                  <tr>
+                    <td></td>
+                    <td>Kalau anda pengguna <b>Bank BPD Kaltimtara,</b> anda bisa membuka aplikasi <b>DG Kaltimtara</b>.</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td>Tapi jika bukan, silahkan membuka aplikasi mobile banking yang lain.</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td><b>Daftar akun</b> dan <b>aktivasi layanan mobile banking</b> jika belum memiliki.</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td><b>Masuk ke akun mobile banking</b> Anda.</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td>Pilih menu <b>Transfer</b>.</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td>Jika memakai aplikasi <b>DG Kaltimtara</b> silahkan pilih menu <b>Transfer Online</b></td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td>Namun jika bukan Pilih <b>transfer antar bank</b>.</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td>Pilih <b>Bank BPD Kaltimtara</b> sebagai tujuan transfer.</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td>Masukkan nomor rekening tujuan: <b>1162079821</b>.</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td>Masukkan nominal <b>Tagihan Ananda</b> yang akan anda bayar.</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td>Masukkan <b>PIN Mobile Banking</b> anda.</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td>Konfirmasi transaksi dan periksa kembali detail transfer, apakah sudah benar anda akan mengirim ke rekening atas nama <b>SD Integral Ar-Rabbani</b>.</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td>Tekan <b>Kirim</b> untuk menyelesaikan transaksi.</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td>Simpan struk bukti transfer anda.</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td>Kirimkan struk bukti transfer anda bisa ke <b>bendahara</b> atau ke <b>guru kelas ananda</b>.</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td>Untuk menghubungi <b>bendahara</b> atau ke <b>guru kelas ananda</b> anda bisa mengeklik tombol berwarna hijau di pojok kanan bawah.</td>
+                  </tr>
+                </table>
+              </div>
+              <h4 class="sedang drop">Melalui Transfer di Bank <b class=" material-symbols-outlined">chevron_right</b></h4>
+              <div class="drop-item">
+                <table>
+                  <tr>
+                    <td></td>
+                    <td>Kunjungi <b>kantor cabang Bank BPD Kaltimtara terdekat</b> atau bisa melalui Bank lainnya.</td>
+                  </tr>
+                    <td></td>
+                    <td>Ambil nomor antrian untuk <b>layanan teller</b>.</td>
+                  </tr>
+                  </tr>
+                    <td></td>
+                    <td>Isikan struk untuk <b>melakukan transfer antar bank</b>.</td>
+                  </tr>
+                  </tr>
+                    <td></td>
+                    <td>Isikan nomor rekening tujuan: <b>1162079821</b>.</td>
+                  </tr>
+                  </tr>
+                    <td></td>
+                    <td>Isikan nama pemilik rekeing: <b>SD Integral Ar-Rabbani</b>.</td>
+                  </tr>
+                  </tr>
+                    <td></td>
+                    <td>Isikan nominal <b>tagihan ananda</b> yang akan anda bayar.</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td>Saat dipanggil, sebutkan kepada teller bahwa Anda ingin melakukan <b>transfer antar bank</b>.</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td>Tunjukkan <b>buku tabungan</b> dan <b>kartu identitas</b> Anda.</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td>Setorkan uang tunai kepada teller sesuai dengan nominal transfer.</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td>Teller akan memproses transaksi dan memberikan bukti transfer.</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td>Simpan struk bukti transfer anda.</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td>Kirimkan struk bukti transfer anda bisa ke <b>bendahara</b> atau ke <b>guru kelas ananda</b>.</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td>Untuk menghubungi <b>bendahara</b> atau ke <b>guru kelas ananda</b> anda bisa mengeklik tombol berwarna hijau di pojok kanan bawah.</td>
+                  </tr>
+                </table>
+              </div>
+              <h4 class="sedang drop">Membayar Langsung di Sekolah <b class=" material-symbols-outlined">chevron_right</b></h4>
+              <div class="drop-item">
+                <table>
+                  <tr>
+                    <td></td>
+                    <td>Siapkan <b>uang tunai</b> yang sesuai dengan tagihan ananda.</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td>Berikan kabar kepada <b>bendahara</b> atau ke <b>guru kelas ananda</b> berupa permohonan bertemu dihari dan waktu yang akan ditentukan.</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td>Datanglah ke sekolah pada <b>jam yang telah ditentukan</b> untuk melakukan pembayaran <b>(pukul 08.00 s/d 14.00)</b>.</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td>Temui <b>bagian bendahara</b> langsung.</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td>Serahkan <b>uang tunai</b> dan <b>catatan tagihan</b>.</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td>Dapatkan kwitansi pembayaran langsung dari <b>bagian bendahara</b>.</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td>Namun jika tidak menemui bagian bendahara bisa uangnya bisa dititipkan ke <b>guru kelas ananda</b>.</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td>Selalu ingatkan ke guru kelas agar mengirimkan <b>bukti pembayaran berupa kwitansi</b>.</td>
+                  </tr>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer>
+      <span class="pd-1"
+        >&copy; 2024 - 2025 | SD Integral Ar-Rabbani Kota Tarakan</span
+      >
+    </footer>
+  </body>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mc-datepicker/dist/mc-calendar.min.js"></script>
+  <script>
+    if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function() {
+    navigator.serviceWorker.register('service-wr.js', {
+      scope: '/' // Scope harus disesuaikan jika Anda ingin kontrol penuh atau sebagian
+    })
+    .catch(function(error) {
+      console.error('Service Worker registration failed:', error);
+    });
+  });
+}
+  </script>
+  <script>
+  const overlay = document.querySelector('.overlay');
+const navbar = document.querySelector('.navbar'); // Changed to .navbar assuming it's a class
+const skeleton = document.querySelector('.skeleton');
+const main = document.querySelector('main');
+const minSplashScreenTime = 1500; // Minimum splash screen display time
+const minSkeletonTime = 1500; // Minimum skeleton screen display time
+let splashStartTime;
+
+function formatDate(isoDateString) {
+  const date = new Date(isoDateString);
+
+  // Format tanggal dengan opsi untuk menampilkan nama bulan dan tahun
+  const options = { day: "2-digit", month: "long", year: "numeric" };
+  return date.toLocaleDateString("id-ID", options); // 'id-ID' untuk format bahasa Indonesia
+}
+function formatDatetoInput(isoDateString) {
+  const date = new Date(isoDateString);
+
+  // Mengambil bagian tahun, bulan, dan hari
+  const year = date.getFullYear();
+  const month = date.getMonth() + 1; // Bulan di JavaScript dimulai dari 0 (Januari), jadi tambahkan 1
+  const day = date.getDate();
+
+  // Format tanggal dalam format yang diinginkan
+  return `${year}, ${month}, ${day}`;
+}
+function formatDateInput(isoDateString) {
+  const date = new Date(isoDateString);
+  // Format tanggal dengan opsi untuk menampilkan DD/MM/YYYY
+  const options = { day: "2-digit", month: "2-digit", year: "numeric" };
+  return date.toLocaleDateString("en-GB", options); // 'en-GB' untuk format tanggal DD/MM/YYYY
+}
+function formatCurrency(amount) {
+  return amount.toLocaleString("id-ID", {
+    style: "currency",
+    currency: "IDR",
+    minimumFractionDigits: 0,
+    maximumFractionDigits: 0,
+  });
+}
+const DATA_URL = "https://script.google.com/macros/s/AKfycbxheZmUshD7trmNyavOu9T5TEAjYtqrSOmT7uptRzFZXTStKrATh9dAPxcvJNXizvUO8w/exec";
+
+function getParameterByName(name) {
+  const urlParams = new URLSearchParams(window.location.search);
+  return urlParams.get(name);
+}
+
+const id = getParameterByName("id");
+async function fetchData() {
+  try {
+    const response = await fetch(DATA_URL);
+    const data = await response.json();
+    const filteredData = data.filter((row) => String(row[2]) === String(id));
+    const Tagihan = {};
+    filteredData.forEach((row) => {
+      Tagihan.no = row[0];
+      Tagihan.nama = row[1];
+      Tagihan.nis = row[2];
+      Tagihan.jk = row[3];
+      Tagihan.kelas = row[4];
+      Tagihan.slunas = row[5];
+      Tagihan.sbelum = row[6];
+      Tagihan.snanti = row[7];
+      Tagihan.skurang = row[8];
+      Tagihan.snom_kurang = row[9];
+      Tagihan.ssebelum = row[10];
+      Tagihan.snominal = row[11];
+      Tagihan.stotalskrg = row[12];
+      Tagihan.stotal = row[13];
+      Tagihan.klunas = row[14];
+      Tagihan.kbelum = row[15];
+      Tagihan.knanti = row[16];
+      Tagihan.kkurang = row[17];
+      Tagihan.knom_kurang = row[18];
+      Tagihan.ksebelum = row[19];
+      Tagihan.knominal = row[20];
+      Tagihan.ktotalskrg = row[21];
+      Tagihan.ktotal = row[22];
+      Tagihan.dbk = row[23];
+      Tagihan.bkharga = row[24];
+      Tagihan.bkpesan = row[25];
+      Tagihan.bklunas = row[26];
+      Tagihan.bkkurang = row[27];
+      Tagihan.bknom_kurang = row[28];
+      Tagihan.bksebelum = row[29];
+      Tagihan.bktotal = row[30];
+      Tagihan.dbj = row[31];
+      Tagihan.bjharga = row[32];
+      Tagihan.bjpesan = row[33];
+      Tagihan.bjlunas = row[34];
+      Tagihan.bjkurang = row[35];
+      Tagihan.bjnom_kurang = row[36];
+      Tagihan.bjtotal = row[37];
+      Tagihan.dlain = row[38];
+      Tagihan.dlharga = row[39];
+      Tagihan.dlpunya = row[40];
+      Tagihan.dllunas = row[41];
+      Tagihan.dlkurang = row[42];
+      Tagihan.dlnom_kurang = row[43];
+      Tagihan.dltotal = row[44];
+      Tagihan.totalAll = row[45];
+      Tagihan.fotopp = row[46];
+      Tagihan.walas = row[47];
+      Tagihan.nisn = row[48];
+      Tagihan.tempatlahir = row[49];
+      Tagihan.tgllahir = row[50];
+      Tagihan.ayah = row[51];
+      Tagihan.ibu = row[52];
+      Tagihan.jalan = row[53];
+      Tagihan.rt = row[54];
+      Tagihan.rw = row[55];
+      Tagihan.kelurahan = row[56];
+      Tagihan.kecamatan = row[57];
+      Tagihan.kota = row[58];
+      Tagihan.kodePos = row[59];
+      Tagihan.status = row[60];
+      Tagihan.versi = row[61];
+    });
+    console.log(Tagihan);
+    const profileku = document.getElementById("btn-pp");
+    const modalprofil = document.getElementById("img-modal-pp");
+    const ppImg = document.getElementById("btn-pp-img");
+    const ananda = document.getElementById("ananda");
+    const walasku = document.getElementById("walasku");
+    const bannertotal = document.getElementById("sum-all");
+    const paket1 = document.getElementById("paket1"),
+      paket2 = document.getElementById("paket2"),
+      paket3 = document.getElementById("paket3");
+    const profNama = document.getElementById("nama-siswa"),
+      profNisn = document.getElementById("nisn-siswa"),
+      profTempat = document.getElementById("tlahir-siswa"),
+      profTgl = document.getElementById("tgllahir-siswa"),
+      profAyah = document.getElementById("ayah-siswa"),
+      profIbu = document.getElementById("ibu-siswa"),
+      profAlamat = document.getElementById("alamat-siswa"),
+      profRt = document.getElementById("rt-siswa"),
+      profKel = document.getElementById("kel-siswa"),
+      profKec = document.getElementById("kec-siswa"),
+      profKota = document.getElementById("kota-siswa"),
+      profKodePos = document.getElementById("kodepos-siswa");
+    const NamaInput = document.getElementById("nama-input"),
+      NisnInput = document.getElementById("nisn-input"),
+      TempatInput = document.getElementById("tempat-input"),
+      AyahInput = document.getElementById("ayah-input"),
+      IbuInput = document.getElementById("ibu-input"),
+      AlamatInput = document.getElementById("alamat-input"),
+      RtInput = document.getElementById("rt-input"),
+      RwInput = document.getElementById("rw-input"),
+      KelInput = document.getElementById("kel-input"),
+      KecInput = document.getElementById("kec-input"),
+      KotaInput = document.getElementById("kota-input"),
+      PosInput = document.getElementById("pos-input"),
+      TglInput = document.getElementById("tgl-input"),
+      StatusInput = document.getElementById("status-input"),
+      VersiInput = document.getElementById("versi-input"),
+      btn_saveProf = document.getElementById("btn-save-profile");
+
+function allData() {
+  function dataAwal(tagihan) {
+    // Mengatur gambar profil
+    profileku.style.backgroundImage = `url(${tagihan.fotopp})`;
+    ppImg.style.backgroundImage = `url(${tagihan.fotopp})`;
+    modalprofil.src = tagihan.fotopp;
+
+    // Mengatur teks profil
+    ananda.textContent = `Hi, ${tagihan.nama}`;
+    bannertotal.textContent = formatCurrency(tagihan.totalAll);
+    walasku.href = `https://wa.me/${tagihan.walas}`;
+
+    // Mengatur link paket
+    const baseUrl = "https://api.whatsapp.com/send?phone=6285247477356&text=";
+    const messageTemplate = (pkg) =>
+      `*Assalamu%27alaikum%20Ustadz*,%0A%0ASaya,%20wali%20murid%20ananda%20*${tagihan.nama}*,%20ingin%20menyampaikan%20bahwa%20kami%20sekeluarga%20berniat%20untuk%20membantu%20dalam%20proses%20pembangunan%20gedung%20sekolah.%20Kami%20memilih%20*Paket%20${pkg}*%20dalam%20pembangunan%20ini.%20Mohon%20informasikan%20bagaimana%20cara%20kami%20dapat%20berkontribusi%20dalam%20proses%20pembangunan.%F0%9F%99%8F%20%0A%0ATerima%20kasih%20atas%20perhatiannya.%20*Wassalamu%27alaikum.*`;
+    paket1.href = baseUrl + messageTemplate("1");
+    paket2.href = baseUrl + messageTemplate("2");
+    paket3.href = baseUrl + messageTemplate("3");
+
+    // Mengatur judul halaman
+    document.title = `Tagihan Siswa Ar-Rabbani Ananda ${tagihan.nama}`;
+    function tglInput(el) {
+      const selector = `#${el}`;
+      const picker = MCDatepicker.create({
+        el: selector,
+        customWeekDays: [
+          "Ahad",
+          "Senin",
+          "Selasa",
+          "Rabu",
+          "Kamis",
+          "Jum'at",
+          "Sabtu",
+        ],
+        customMonths: [
+          "Januari",
+          "Februari",
+          "Maret",
+          "April",
+          "Mei",
+          "Juni",
+          "Juli",
+          "Agustus",
+          "September",
+          "Oktober",
+          "November",
+          "Desember",
+        ],
+        selectedDate: new Date(formatDatetoInput(Tagihan.tgllahir)),
+        dateFormat: "dd/mm/yyyy",
+        theme: {
+          active_text_color: "#396b1c",
+          weekday: {
+            foreground: "#396b1c",
+          },
+          display: {
+            foreground: "rgba(255, 255, 255, 0.8)",
+            background: "#396b1c",
+          },
+          button: {
+            success: {
+              foreground: "#396b1c",
+            },
+            danger: {
+              foreground: "#e65151",
+            },
+          },
+          date: {
+            active: {
+              default: {
+                foreground: "rgb(0, 0, 0)",
+              },
+              picked: {
+                foreground: "#ffffff",
+                background: "#396b1c",
+              },
+              today: {
+                foreground: "rgb(0, 0, 0)",
+                background: "rgba(0, 0, 0, 0.2)",
+              },
+            },
+            inactive: {
+              default: {
+                foreground: "rgba(0, 0, 0, 0.2)",
+              },
+              picked: {
+                foreground: "#38ada9",
+                background: "#38ada9",
+              },
+              today: {
+                foreground: "rgba(0, 0, 0, 0.2)",
+                background: "rgba(0, 0, 0, 0.2)",
+              },
+            },
+          },
+        },
+      });
+    }
+    tglInput("tgl-input");
+    profNama.textContent = tagihan.nama;
+    profNisn.textContent = tagihan.nisn;
+    profTempat.textContent = tagihan.tempatlahir;
+    profTgl.textContent = formatDate(tagihan.tgllahir);
+    profAyah.textContent = tagihan.ayah;
+    profIbu.textContent = tagihan.ibu;
+    profAlamat.textContent = tagihan.jalan;
+    profRt.textContent =
+      tagihan.rw === "" ? tagihan.rt : `${tagihan.rt}/${tagihan.rw}`;
+    profKel.textContent = tagihan.kelurahan;
+    profKec.textContent = tagihan.kecamatan;
+    profKota.textContent = tagihan.kota;
+    profKodePos.textContent = tagihan.kodePos;
+    NamaInput.value = tagihan.nama;
+    NisnInput.value = tagihan.nisn;
+    TempatInput.value = tagihan.tempatlahir;
+    TglInput.value = formatDateInput(tagihan.tgllahir);
+    AyahInput.value = tagihan.ayah;
+    IbuInput.value = tagihan.ibu;
+    AlamatInput.value = tagihan.jalan;
+    RtInput.value = tagihan.rt;
+    RwInput.value = tagihan.rw;
+    KelInput.value = tagihan.kelurahan;
+    KecInput.value = tagihan.kecamatan;
+    KotaInput.value = tagihan.kota;
+    PosInput.value = tagihan.kodePos;
+    VersiInput.value = tagihan.versi;
+  }
+
+  function updateStatus(element, className, status, price, text) {
+    if (element) {
+      element.classList.add(className);
+      element.textContent = status;
+      if (price) {
+        price.textContent = text;
+      }
+    }
+  }
+  function updatePrice(element, amount) {
+    if (element) {
+      element.textContent = formatCurrency(amount);
+    }
+  }
+  function hideFlex(flex, priceElement) {
+    if (flex) {
+      flex.style.display = "none";
+      if (priceElement) {
+        priceElement.textContent = "-";
+      }
+    }
+  }
+  function indexPrice(element, target, id) {
+    const index = element.split(",").indexOf(id);
+    const hargaArray = target
+      .split(",")
+      .map((item) => item.trim().replace(/[^0-9]/g, ""));
+    const rawAmount = hargaArray[index] || "0";
+    return parseInt(rawAmount, 10);
+  }
+  function updateStatusBasedOnId(id, stats, price,  lunas, kurang, nom_kurang, pesan, db, dbharga) {
+  // Tentukan status, className, dan text berdasarkan kondisi
+  const status = lunas.includes(id) ? 
+    { className: "btn-green", text: "Lunas", priceText: "-" } :
+    kurang.includes(id) ?
+    { className: "btn-yellow", text: "Kurang", priceText: formatCurrency(indexPrice(kurang, nom_kurang, id)) } :
+    pesan.includes(id) ?
+    { className: "btn-gray", text: "Belum dibayar", priceText: formatCurrency(indexPrice(db, dbharga, id))} :
+    null;
+
+    if (status) {
+      updateStatus(stats, status.className, status.text, price, status.priceText);
+    }
+  }
+  function dataSPP(tagihan) {
+    const flexspp = document.querySelectorAll(".flex-spp");
+
+    // Loop melalui setiap elemen .flex-spp
+    flexspp.forEach((flex) => {
+      const month = flex.querySelector(".bulan");
+      if (!month) return; // Jika elemen .bulan tidak ditemukan, lewati
+
+      const id = month.id;
+      const stats = flex.querySelector(".status");
+      const price = flex.querySelector(".nominal");
+      // Check apakah ID ada di tagihan.SNanti
+      if (tagihan.snanti.includes(id)) {
+        hideFlex(flex, price);
+        return; // Langsung keluar dari loop untuk .flex-spp ini
+      }
+      (tagihan.slunas.includes(id) ? 
+        updateStatus(stats, "btn-green", "Lunas", price, "-"):
+        tagihan.sbelum.includes(id) ? 
+          updateStatus(stats, "btn-gray", "Belum dibayar", price, formatCurrency(tagihan.snominal)):
+          null
+        );
+      // Check apakah ID ada di tagihan.SKurang
+      if (tagihan.skurang.includes(id)) {
+       const amount = indexPrice(tagihan.skurang, tagihan.snom_kurang, id);
+        updateStatus(
+          stats,
+          "btn-yellow",
+          "Kurang",
+          price,
+          formatCurrency(amount)
+        );
+        return;
+      }
+
+      
+      // Mengecek nilai dari variabel id
+      if (id === "SPP-Sebelumnya") {
+        if (tagihan.ssebelum.startsWith("Ada")) {
+          flex.style.display = "";
+          const amount = parseInt(tagihan.ssebelum.split(",")[1]);
+          updateStatus(
+            stats,
+            "btn-gray",
+            "Belum dibayar",
+            price,
+            formatCurrency(amount)
+          );
+        } else {
+          hideFlex(flex, price);
+        }
+      }
+    });
+    // Tampilkan total di dalam elemen dengan class 'total' dalam format ribuan
+    const totalElement = document.getElementById("total-spp");
+    totalElement.textContent = formatCurrency(tagihan.stotalskrg);
+  }
+  function dataKegiatan(tagihan) {
+    const flexKeg = document.querySelectorAll(".flex-keg");
+    flexKeg.forEach((flex) => {
+      const month = flex.querySelector(".bulan");
+      if (!month) return; // Jika elemen .bulan tidak ditemukan, lewati
+
+      const id = month.id;
+      const stats = flex.querySelector(".status");
+      const price = flex.querySelector(".nominal");
+      // Check apakah ID ada di tagihan.KNanti
+      if (tagihan.knanti.includes(id)) {
+        hideFlex(flex, price);
+        return; // Langsung keluar dari loop untuk .flex ini
+      }
+      (tagihan.klunas.includes(id) ? 
+        updateStatus(stats, "btn-green", "Lunas", price, "-"):
+        tagihan.kbelum.includes(id) ? 
+          updateStatus(stats,"btn-gray", "Belum dibayar", price, formatCurrency(tagihan.knominal)):
+          null
+        );
+
+      // Check apakah ID ada di tagihan.KKurang
+      if (tagihan.kkurang.includes(id)) {
+        const amount = indexPrice(tagihan.kkurang, tagihan.knom_kurang, id);
+        updateStatus(
+          stats,
+          "btn-yellow",
+          "Kurang",
+          price,
+          formatCurrency(amount)
+        );
+        return;
+      }
+
+      if (id === "Keg-Sebelumnya") {
+        if (tagihan.ksebelum.startsWith("Ada")) {
+          flex.style.display = "";
+          const amount = parseInt(tagihan.ksebelum.split(",")[1]);
+          updateStatus(
+            stats,
+            "btn-gray",
+            "Belum dibayar",
+            price,
+            formatCurrency(amount)
+          );
+        } else {
+          hideFlex(flex, price);
+        }
+      }
+    });
+
+    // Tampilkan total di dalam elemen dengan class 'total' dalam format ribuan
+    const totalKeg = document.getElementById("total-kegiatan");
+    totalKeg.textContent = formatCurrency(tagihan.ktotalskrg);
+  }
+  function dataBaju(tagihan) {
+    const flexBaju = document.querySelectorAll(".flex-baju");
+
+    // Loop melalui setiap elemen .flex-baju
+    flexBaju.forEach((flex) => {
+      const month = flex.querySelector(".bulan");
+      if (!month) return; // Jika elemen .bulan tidak ditemukan, lewati
+
+      const id = month.id;
+      const price = flex.querySelector(".nominal");
+      const stats = flex.querySelector(".status");
+
+      // 2. Cari .bulan yang idnya tidak ada di BjPesan
+      if (!tagihan.bjpesan.includes(id)) {
+        hideFlex(flex, price);
+      }
+      updateStatusBasedOnId(id, stats, price, tagihan.bjlunas, tagihan.bjkurang, tagihan.bjnom_kurang, tagihan.bjpesan, tagihan.dbj, tagihan.bjharga);
+    });
+    if (tagihan.bjpesan === "") {
+      flexBaju.forEach((flex) => {
+        if (flex.classList.contains("nothing")) {
+          flex.classList.remove("nothing");
+        }
+      });
+    }
+
+    // Tampilkan total di dalam elemen dengan class 'total'
+    const totalBaju = document.getElementById("total-baju");
+    totalBaju.textContent = formatCurrency(tagihan.bjtotal);
+  }
+  function dataBuku(tagihan) {
+    const flexBuku = document.querySelectorAll(".flex-buku");
+
+    // Loop melalui setiap elemen .flex-baju
+    flexBuku.forEach((flex) => {
+      const month = flex.querySelector(".bulan");
+      if (!month) return; // Jika elemen .bulan tidak ditemukan, lewati
+
+      const id = month.id;
+      const price = flex.querySelector(".nominal");
+      const stats = flex.querySelector(".status");
+
+      // 2. Cari .bulan yang idnya tidak ada di BjPesan
+      if (!tagihan.bkpesan.includes(id)) {
+        if (id === "Buku-Sebelumnya") {
+          if (tagihan.bksebelum.startsWith("Ada")) {
+            flex.style.display = "";
+            const amount = parseInt(tagihan.bksebelum.split(",")[1]);
+            updateStatus(stats, "btn-gray", "Belum dibayar", price, formatCurrency(amount));
+          } else {
+            hideFlex(flex, price);
+          }
+        } else {
+          hideFlex(flex, price);
+        }
+      }
+      updateStatusBasedOnId(id, stats, price, tagihan.bklunas, tagihan.bkkurang, tagihan.bknom_kurang, tagihan.bkpesan, tagihan.dbk, tagihan.bkharga);
+    });
+    if (tagihan.bkpesan === "") {
+      flexBuku.forEach((flex) => {
+        if (flex.classList.contains("nothing")) {
+          flex.classList.remove("nothing");
+        }
+      });
+    }
+
+    // Tampilkan total di dalam elemen dengan class 'total'
+    const totalBuku = document.getElementById("total-buku");
+    totalBuku.textContent = formatCurrency(tagihan.bktotal);
+  }
+  function dataLain(tagihan) {
+    const flexLain = document.querySelectorAll(".flex-lain");
+
+    // Loop melalui setiap elemen .flex-lain
+    flexLain.forEach((flex) => {
+      const month = flex.querySelector(".bulan");
+      if (!month) return; // Jika elemen .bulan tidak ditemukan, lewati
+
+      const id = month.id;
+      const price = flex.querySelector(".nominal");
+      const stats = flex.querySelector(".status");
+      // 2. Cari .bulan yang idnya tidak ada di LPunya
+      if (!tagihan.dlpunya.includes(id)) {
+        hideFlex(flex, price);
+      }
+      updateStatusBasedOnId(id, stats, price, tagihan.dllunas, tagihan.dlkurang, tagihan.dlnom_kurang, tagihan.dlpunya, tagihan.dlain, tagihan.dlharga);
+    });
+    if (tagihan.dlpunya === "") {
+      // Sembunyikan semua .flex-lain yang memiliki child dengan id #total
+      flexLain.forEach((flex) => {
+        if (flex.classList.contains("nothing")) {
+          flex.classList.remove("nothing");
+        }
+      });
+    }
+    // Tampilkan total di dalam elemen dengan class 'total' dalam format ribuan
+    const totalLain = document.getElementById("total-lain");
+    totalLain.textContent = formatCurrency(tagihan.dltotal);
+  }
+  function modalSPP(tagihan) {
+    const modalSPP = document.querySelectorAll(".mod-spp");
+
+    // Loop melalui setiap elemen .mod-spp
+    modalSPP.forEach((flex) => {
+      const month = flex.querySelector(".tunggakan");
+      if (!month) return; // Jika elemen .tunggakan tidak ditemukan, lewati
+
+      const id = month.id;
+      const price = flex.querySelector(".jumlah");
+      const stats = flex.querySelector(".penjelasan");
+      // Check apakah ID ada di tagihan.SLunas
+      (tagihan.slunas.includes(id) ? 
+        updateStatus(stats, "btn-green", "Lunas", price, "-"):
+        tagihan.sbelum.includes(id) ? 
+          updateStatus(stats,"btn-gray","Belum dibayar",price,formatCurrency(tagihan.snominal)):
+          null
+        );
+      // Check apakah ID ada di tagihan.SKurang
+      if (tagihan.skurang.includes(id)) {
+        const amount = indexPrice(tagihan.skurang,tagihan.snom_kurang,id);
+        updateStatus(
+          stats,
+          "btn-yellow",
+          "Kurang",
+          price,
+          formatCurrency(amount)
+        );
+        return;
+      }
+      // Check apakah ID ada di tagihan.SSebelum
+      if (id === "modalspp-Sebelumnya") {
+        if (tagihan.ssebelum.startsWith("Ada")) {
+          flex.style.display = "";
+          const amount = parseInt(tagihan.ssebelum.split(",")[1]);
+          updateStatus(stats, "btn-gray", "Belum dibayar", price, formatCurrency(amount));
+        } else {
+          hideFlex(flex, price);
+        }
+      }
+    });
+    // Tampilkan total di dalam elemen dengan class 'total' dalam format ribuan
+    const totalAllSPP = document.getElementById("total-spp-all");
+    totalAllSPP.textContent = formatCurrency(tagihan.stotal);
+  }
+  function modalKegiatan(tagihan) {
+    const modalKeg = document.querySelectorAll(".mod-keg");
+    // Loop melalui setiap elemen .mod-keg
+    modalKeg.forEach((flex) => {
+      const month = flex.querySelector(".tunggakan");
+      if (!month) return; // Jika elemen .tunggakan tidak ditemukan, lewati
+
+      const id = month.id;
+      const price = flex.querySelector(".jumlah");
+      const stats = flex.querySelector(".penjelasan");
+      // Check apakah ID ada di tagihan.KLunas
+      (tagihan.klunas.includes(id) ? 
+        updateStatus(stats, "btn-green", "Lunas", price, "-"):
+        tagihan.kbelum.includes(id) ? 
+          updateStatus(stats,"btn-gray", "Belum dibayar", price, formatCurrency(tagihan.knominal)):
+          null
+        );
+
+      // Check apakah ID ada di tagihan.KKurang
+      if (tagihan.kkurang.includes(id)) {
+        const amount = indexPrice(tagihan.kkurang,tagihan.knom_kurang,id);
+        updateStatus(
+          stats,
+          "btn-yellow",
+          "Kurang",
+          price,
+          formatCurrency(amount)
+        );
+      }
+      if (id === "modalkeg-Sebelumnya") {
+        if (tagihan.ksebelum.startsWith("Ada")) {
+          flex.style.display = "";
+          const amount = parseInt(tagihan.ksebelum.split(",")[1]);
+          updateStatus(stats, "btn-gray", "Belum dibayar", price, formatCurrency(amount));
+        } else {
+          hideFlex(flex, price);
+        }
+      }
+    });
+
+    const totalModKeg = document.getElementById("total-keg-all");
+    totalModKeg.textContent = formatCurrency(tagihan.ktotal);
+  }
+
+    dataAwal(Tagihan);
+    dataSPP(Tagihan);
+    dataKegiatan(Tagihan);
+    dataBuku(Tagihan);
+    dataBaju(Tagihan);
+    dataLain(Tagihan);
+    modalSPP(Tagihan);
+    modalKegiatan(Tagihan);
+    checkData();
+    }
+    allData()
+  } catch (error) {
+    console.error("Error fetching data:", error);
+    document.getElementById("jsonData").textContent = "Error fetching data";
+  }
+}
+function checkData() {
+  let allElementsUpdated = true;
+
+  const conditions = [
+    { element: document.getElementById("btn-pp").style.backgroundImage, default: 'none' },
+    { element: document.getElementById("btn-pp-img").style.backgroundImage, default: 'none' },
+    { element: document.getElementById("img-modal-pp").src, default: '' },
+    { element: document.getElementById("ananda").textContent, default: '' },
+    { element: document.getElementById("sum-all").textContent, default: '' },
+    { element: document.getElementById("walasku").href, default: 'https://example.com' },
+    { element: document.getElementById("paket1").href, default: 'https://example.com' },
+    { element: document.getElementById("paket2").href, default: 'https://example.com' },
+    { element: document.getElementById("paket3").href, default: 'https://example.com' },
+    { element: document.title, default: '' },
+    { element: document.getElementById("total-spp").textContent, default: '' },
+    { element: document.getElementById("total-kegiatan").textContent, default: '' },
+    { element: document.getElementById("total-baju").textContent, default: '' },
+    { element: document.getElementById("total-buku").textContent, default: '' },
+    { element: document.getElementById("total-lain").textContent, default: '' },
+    { element: document.getElementById("total-spp-all").textContent, default: '' },
+    { element: document.getElementById("total-keg-all").textContent, default: '' },
+  ];
+
+  for (const { element, default: defaultValue } of conditions) {
+    if (element === defaultValue || element === '') {
+      allElementsUpdated = false;
+      break;
+    }
+  }
+
+  if (allElementsUpdated) {
+    hideSkeleton();
+  } else {
+    console.error("Terjadi kesalahan dalam data. Silakan refresh halaman untuk memperbarui informasi.");
+  }
+}
+
+function hideSkeleton() {
+  const now = Date.now();
+  const timeElapsed = now - splashStartTime;
+  const remainingSkeletonTime = Math.max(minSkeletonTime - timeElapsed, 0);
+
+  setTimeout(() => {
+    overlay.style.display = "none";
+    skeleton.classList.add("non");
+    main.style.display = "block";
+    main.classList.add("active");
+    setTimeout(() => {
+      skeleton.style.display = "none";
+    }, 500);
+  }, remainingSkeletonTime);
+}
+
+function initializeSplashScreen() {
+  splashStartTime = Date.now();
+  setTimeout(() => {
+    overlay.classList.add("non");
+    waitMainContent();
+  }, minSplashScreenTime);
+}
+
+function waitMainContent() {
+  setTimeout(() => {
+    fetchData(); // Ensure that data is fetched before checking and hiding the skeleton
+  }, 500); // Delay singkat untuk memastikan data bisa diperiksa
+}
+
+document.addEventListener('DOMContentLoaded', initializeSplashScreen);
+  </script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const swiper = new Swiper(".swiper", {
+        // loop: true,
+        speed:1500,
+        autoplay: {
+          delay: 7000,
+        },
+        // If we need pagination
+        pagination: {
+          el: ".swiper-pagination",
+        },
+        
+      });
+      const customAlert = document.getElementById("customAlert");
+
+let alertCount = 0;
+let alertHeight = 60;
+function openAlert(status, pesan){
+  if (alertCount < 5) {
+      let set = status;
+      if (set === "berhasil") {
+        showAlert(pesan, "berhasil");
+      } else if (set === "gagal") {
+        showAlert(pesan, "gagal");
+      } else {
+        showAlert(pesan, "berhasil");
+      }
+      alertCount++;
+    }
+}
+// fungsi menampilkan pesan
+function showAlert(message, extra) {
+  const tambahanAlert = document.createElement("div");
+  tambahanAlert.className = "alert";
+  tambahanAlert.classList.add(extra);
+  tambahanAlert.textContent = message;
+  customAlert.appendChild(tambahanAlert);
+  setTimeout(() => {
+    tambahanAlert.classList.add("slideIn");
+    tambahanAlert.style.top = `${(alertCount - 1) * alertHeight + 10}px`;
+  }, 50);
+  setTimeout(function () {
+    hideAlert(tambahanAlert);
+  }, 2000);
+}
+
+// fungsi menyembunyikan pesan
+function hideAlert(alertElement) {
+  const currentTop = window.getComputedStyle(alertElement).top;
+  alertElement.classList.add("slideOut");
+  if (alertCount > 1) {
+    alertElement.style.top = `${parseFloat(currentTop) / 4}px`;
+  } else {
+    alertElement.style.top = "";
+  }
+  setTimeout(() => {
+    customAlert.removeChild(alertElement);
+    alertCount--;
+  }, 300);
+}
+const NamaInput = document.getElementById("nama-input"),
+        TempatInput = document.getElementById("tempat-input"),
+        AyahInput = document.getElementById("ayah-input"),
+        IbuInput = document.getElementById("ibu-input"),
+        AlamatInput = document.getElementById("alamat-input"),
+        RtInput = document.getElementById("rt-input"),
+        RwInput = document.getElementById("rw-input"),
+        KelInput = document.getElementById("kel-input"),
+        KecInput = document.getElementById("kec-input"),
+        KotaInput = document.getElementById("kota-input"),
+        PosInput = document.getElementById("pos-input"),
+        TglInput = document.getElementById("tgl-input"),
+        StatusInput = document.getElementById("status-input"),
+        VersiInput = document.getElementById("versi-input"),
+        btn_saveProf = document.getElementById("btn-save-profile"); // Pastikan ID ini benar
+        let versi = parseInt(VersiInput.value) || 0;
+    function saveData(target){
+      target.addEventListener("click", () => {
+          simpanData();
+      });
+    }
+    saveData(btn_saveProf);
+    function simpanData(){
+      versi += 1;
+        VersiInput.value = versi;
+
+        const dataInput = {
+          id: id,
+          Nama: NamaInput.value.trim(),
+        'Tempat Lahir': TempatInput.value.trim(),
+        'Tanggal Lahir': TglInput.value.trim(),
+        'Nama Ayah': AyahInput.value.trim(),
+        'Nama Ibu': IbuInput.value.trim(),
+        Alamat: AlamatInput.value.trim(),
+        RT: RtInput.value.trim(),
+        RW: RwInput.value.trim(),
+        Kelurahan: KelInput.value.trim(),
+        Kecamatan: KecInput.value.trim(),
+        Kota: KotaInput.value.trim(),
+        'Kode Pos': PosInput.value.trim(),
+        Status: StatusInput.value.trim(),
+        Versi: VersiInput.value
+        };
+
+        const allFieldsFilled = Object.values(dataInput).every(value => value !== "");
+
+        if (allFieldsFilled) {
+            // Iterasi melalui objek dan cetak setiap nilai
+            for (const [key, value] of Object.entries(dataInput)) {
+              console.log(`${key} : ${value}`);
+            }
+            kirimData();
+            // Tambahkan kode lain untuk menyimpan data di sini
+        } else {
+            openAlert("gagal", "Semua data harus diisi");
+            // Tampilkan pesan kesalahan kepada pengguna, jika perlu
+        }
+    }
+    const urlProxy = "https://cors-anywhere.herokuapp.com/";
+    async function kirimData() {
+    const data = {
+        id: id,
+        nama: NamaInput.value.trim(),
+        tempatlahir: TempatInput.value.trim(),
+        tgllahir: TglInput.value.trim(),
+        ayah: AyahInput.value.trim(),
+        ibu: IbuInput.value.trim(),
+        jalan: AlamatInput.value.trim(),
+        rt: RtInput.value.trim(),
+        rw: RwInput.value.trim(),
+        kelurahan: KelInput.value.trim(),
+        kecamatan: KecInput.value.trim(),
+        kota: KotaInput.value.trim(),
+        kodePos: PosInput.value.trim(),
+        status: StatusInput.value.trim(),
+        versi: VersiInput.value
+    };
+
+    try {
+        const response = await fetch(urlProxy + DATA_URL, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data)
+        });
+
+        // Tambahkan logging untuk memeriksa status dan teks respons
+        console.log('Status:', response.status);
+        const text = await response.text();
+        console.log('Response Text:', text);
+
+        if (response.ok) {
+            const result = JSON.parse(text); // Mengubah teks respons menjadi objek JSON
+            console.log(result);
+            openAlert("berhasil", "Data berhasil diperbaharui");
+        } else {
+            throw new Error('Network response was not ok.');
+        }
+    } catch (error) {
+        console.error('Error:', error);
+        openAlert("gagal", "Terjadi kesalahan saat menyimpan data");
+    }
+}
+    });
+
+
+    window.onscroll = () => {
+      scrollelement();
+    }
+    function scrollelement() {
+      var navbar = document.getElementById('nav');
+      if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+        navbar.classList.add("scroll");
+      } else {
+        navbar.classList.remove("scroll");
+      }
+    }
+    const lists = document.querySelectorAll(".drop");
+
+    if (lists.length > 0) {
+      dropList(lists);
+    }
+
+    function dropList(els) {
+      els.forEach(function(el) {
+        el.addEventListener("click", function(e) {
+
+          els.forEach(function(item) {
+            if (item !== el) {
+              item.classList.remove('active');
+              let content = item.nextElementSibling;
+              content.classList.remove('active');
+              content.style.maxHeight = null;
+            }
+          });
+
+          // Toggle class 'active' pada elemen yang sedang diklik
+          e.currentTarget.classList.toggle('active');
+          let content = e.currentTarget.nextElementSibling;
+          content.classList.toggle('active');
+          
+          // Mengatur maxHeight berdasarkan status 'active'
+          if (content.classList.contains('active')) {
+            content.style.maxHeight = content.scrollHeight + "px";
+          } else {
+            content.style.maxHeight = null;
+          }
+        });
+      });
+    }
+    const btn_pp = document.getElementById("btn-pp"),
+      btn_spp = document.getElementById("detail-spp"),
+      btn_keg = document.getElementById("detail-kegiatan"),
+      btn_donasi = document.getElementById("btn-donasi"),
+      btn_profile = document.getElementById("btn-profile"),
+      btn_ppImg = document.getElementById("btn-pp-img"),
+      btn_editProf = document.getElementById("btn-edit-profile"),
+      btn_saveProf = document.getElementById("btn-save-profile"),
+      closePP = document.getElementById("close-pp");
+    const fab = document.getElementById("fab1"),
+    fabact = document.querySelectorAll(".fab-action");
+    const body = document.querySelector("body"),
+      close = document.querySelectorAll(".close"),
+      modal = document.getElementById("modal"),
+      modal2 = document.getElementById("modal2"),
+      card_modals = document.querySelectorAll(".modal-card"),
+      card_modals2 = document.querySelectorAll(".modal-card2"),
+      pp = document.getElementById("modal-pp"),
+      editProf = document.getElementById("modal-edit"),
+      imgPP = document.getElementById("img-modal-pp"),
+      spp = document.getElementById("modal-spp"),
+      kegiatan = document.getElementById("modal-kegiatan"),
+      donasi = document.getElementById("modal-donasi"),
+      drop = document.getElementById("drop-profile"),
+      profile = document.getElementById("modal-profile"),
+      closeProfile = document.getElementById("close-profile");
+
+    fab.addEventListener("click", () => {
+      fab.classList.toggle("check");
+    });
+    function closefab(){
+      fab.classList.remove("check");
+    }
+    let isDropActive = false;
+    let isModalPP = false;
+// Fungsi untuk menutup drop
+function closeDrop() {
+    drop.classList.remove("active");
+    document.body.classList.remove("open");
+    isDropActive = false;
+}
+
+// Event listener untuk membuka drop
+function openDropProf(target){
+  target.addEventListener("click", ()=>{
+    drop.classList.toggle("non");
+    if (window.innerWidth < 1024) {
+          modal2.classList.toggle("active");
+          drop.classList.toggle("active");
+          document.body.classList.toggle("open");
+      } else {
+          drop.classList.toggle("active");
+      }
+      isDropActive = true;
+  });
+}
+openDropProf(btn_pp);
+
+function openModal(target, modalBox, status) {
+  target.addEventListener("click", () => {
+    modal.classList.add("active");
+    modalBox.classList.remove("non");
+    setTimeout(() => {
+      modalBox.classList.add("active");
+    }, 50);
+    document.body.classList.add("open");
+    isModalPP = status
+  });
+}
+
+openModal(btn_ppImg, pp, false);
+openModal(btn_editProf, editProf, false);
+openModal(btn_spp, spp, true);
+openModal(btn_keg, kegiatan, true);
+openModal(btn_donasi, donasi, true);
+    
+drop.addEventListener("click", (e) => {
+    e.stopPropagation();
+});
+function openProfile(target, modalBox){
+    target.addEventListener("click", (e)=>{
+      e.stopPropagation();
+      modal2.classList.add("active");
+      modalBox.classList.remove("non");
+        drop.classList.remove("active");
+        setTimeout(() => {
+          modalBox.classList.add("active");
+        }, 100);
+        document.body.classList.add("open");
+        isDropActive = false;
+        isModalPP = false;
+    });
+}
+
+openProfile(btn_profile, profile);
+document.addEventListener("click", (e) => {
+        if (isDropActive) {
+            if (!drop.contains(e.target) &&
+                e.target !== btn_pp &&
+                e.target !== btn_spp &&
+                e.target !== btn_keg &&
+                e.target !== btn_profile &&
+                e.target !== btn_ppImg &&
+                e.target !== modal &&
+                e.target !== modal2 &&
+                e.target !== btn_donasi) {
+                closeDrop();
+              }
+        }
+        if (!fab.contains(e.target) && !Array.from(fabact).includes(e.target)) {
+              closefab();
+          }
+    });
+function tutupModal() {
+  modal.classList.remove("active");
+  pp.classList.remove("active");
+  pp.classList.add("non");
+  spp.classList.remove("active");
+  spp.classList.add("non");
+  editProf.classList.remove("active");
+  editProf.classList.add("non");
+  kegiatan.classList.remove("active");
+  kegiatan.classList.add("non");
+  donasi.classList.remove("active");
+  donasi.classList.add("non");
+  isDropActive = false;
+  if(isModalPP){
+    document.body.classList.remove("open");
+  } else {
+    document.body.classList.add("open");
+  }
+}
+    function closeModals(){
+      modal2.classList.remove("active");
+      profile.classList.remove("active");
+      profile.classList.add("non");
+      drop.classList.remove("active");
+      document.body.classList.remove("open");
+      isModalPP = false;
+      isDropActive = false;
+    }
+    closeProfile.addEventListener("click", (e)=>{
+      e.stopPropagation();
+      modal2.classList.remove("active");
+      profile.classList.remove("active");
+      profile.classList.add("non");
+      drop.classList.remove("active");
+      document.body.classList.remove("open");
+    });
+    
+    close.forEach((tutup) => {
+      tutup.addEventListener("click", (e)=> {
+        e.stopPropagation();
+        tutupModal();
+      })
+    });
+  function close_foto(target) {
+    target.addEventListener("click", (e) => {
+      e.stopPropagation();
+        // Hapus kelas "active" dan tambahkan "non" pada pp dan modal
+        pp.classList.remove("active");
+        pp.classList.add("non");
+        modal.classList.remove("active");
+        document.body.classList.add("open"); // Ganti dari add ke remove untuk menutup body class
+    });
+  }
+
+// Fungsi untuk menangani modal
+function tahanModal(effect, box) {
+    effect.addEventListener("click", (e) => {
+        e.stopPropagation(); // Mencegah bubble event
+        box.classList.add("active");
+        effect.classList.add("active");
+        document.body.classList.add("open"); // Tambahkan class open pada body
+    });
+}
+tahanModal(imgPP, modal);
+tahanModal(spp, modal);
+tahanModal(kegiatan, modal);
+tahanModal(donasi, modal);
+tahanModal(editProf, modal);
+tahanModal(profile, modal2);
+
+modal.addEventListener("click", tutupModal);
+modal2.addEventListener("click", closeModals);
+function scrollModal(box, target){
+  box.addEventListener("scroll", () => {
+  const fiftyVH = window.innerHeight * 0.3;
+
+  target.forEach((card_modal) => {
+    if (window.innerWidth < 1024) {
+      if (modal.scrollTop > fiftyVH) {
+        card_modal.style.borderRadius = "0";
+      } else {
+        card_modal.style.borderRadius = "25px 25px 0 0";
+      }
+    }
+  });
+});
+}
+scrollModal(modal, card_modals);
+scrollModal(modal2, card_modals2);
+
+  </script>
+</html>
