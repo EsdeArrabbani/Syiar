@@ -90,11 +90,11 @@
   width: 100%;
 }
 .donasi-content:first-child .bangunan .img-donasi .post-donasi {
-  background-image: url("public/images/mobile/bangunan.jpg");
+  background-image: url("public/images/bangunan.jpg");
   background-position: right;
 }
 .donasi-content:nth-child(2) .bangunan .img-donasi .post-donasi {
-  background-image: url("public/images/mobile/rencanabangunan.jpg");
+  background-image: url("public/images/rencanabangunan.jpg");
 }
 .skeleton {
   padding: 64px 1.5rem 0 1.5rem;
@@ -542,7 +542,7 @@
   color: #fff;
   background-position: top right;
   background-size: cover;
-  background-image: url("public/images/mobile/atm.jpg");
+  background-image: url("public/images/atm.jpg");
 }
 .upper {
   text-transform: uppercase;
